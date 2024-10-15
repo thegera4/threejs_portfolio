@@ -6,10 +6,11 @@ Source: https://sketchfab.com/3d-models/hacker-room-stylized-a0cfe6edf2dd494c8a9
 Title: Hacker Room - Stylized
 */
 import { useGLTF } from '@react-three/drei'
+import { CustomGLTF } from "../types.ts";
 
 export default function Model(props: JSX.IntrinsicElements['group']) {
 
-  const { nodes, materials } = useGLTF('/models/hacker-room.glb') as any
+  const { nodes, materials } = useGLTF('/models/hacker-room.glb') as CustomGLTF
 
   return (
     <group {...props} dispose={null}>

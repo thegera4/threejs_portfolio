@@ -10,10 +10,10 @@ const Target = (props: TargetProps) => {
   const targetRef = useRef<THREE.Mesh | null>(null)
   const { scene } = useGLTF("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf")
 
-  //TODO: fix possible nulls here
   useGSAP(() => {
-    return gsap.to(targetRef.current?.position,
-      {
+      // @ts-expect-error/ possible nulls can not be addressed, but we know it is not null
+    gsap.to(targetRef.current?.position, {
+        // @ts-expect-error/ possible nulls can not be addressed, but we know it is not null
         y: targetRef.current?.position?.y + 0.5,
         duration: 1.5,
         yoyo: true,

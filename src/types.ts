@@ -1,5 +1,6 @@
-import {GLTF} from "three-stdlib";
-import {Mesh} from "three";
+import React from "react"
+import {GLTF} from "three-stdlib"
+import {Mesh} from "three"
 
 /** Navigation Links */
 export type NavLink = { id: number, name: string, href: string }
@@ -42,6 +43,7 @@ export interface CalculateSizesReturnType {
 /** ThreeDModel component props */
 export interface ThreeDModelProps {
   sizes: CalculateSizesReturnType
+  isMobile: boolean
 }
 
 /** FloatingIcons component props */
@@ -52,4 +54,36 @@ export interface FloatingIconsProps {
 /** Target component props */
 export interface TargetProps {
   position: [number, number, number]
+}
+
+/** ReactLogo component props */
+export interface ReactLogoProps {
+  position: [number, number, number]
+}
+
+/** Custom type for ReactLogo GLTF */
+export interface ReactLogoGLTF {
+  nodes: { 'React-Logo_Material002_0': Mesh }
+  materials: { 'Material.002': Mesh['material'] }
+}
+
+/** Cube component props */
+export interface CubeProps {
+  position: [number, number, number]
+}
+
+/** Custom type for Cube GLTF */
+export interface CubeGLTF {
+  nodes: { Cube: Mesh }
+}
+
+/** Rings component props */
+export interface RingsProps {
+  position: [number, number, number]
+}
+
+/** HeroCamera component props */
+export interface HeroCameraProps {
+  children: React.ReactNode
+  isMobile: boolean
 }

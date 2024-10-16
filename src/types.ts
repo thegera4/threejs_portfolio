@@ -87,3 +87,10 @@ export interface HeroCameraProps {
   children: React.ReactNode
   isMobile: boolean
 }
+
+/** Button component props */
+export interface ButtonProps {
+  name: string
+  isBeam: boolean
+  containerClass: string
+}

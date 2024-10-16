@@ -2,6 +2,7 @@ import Texts from "./Texts.tsx"
 import ThreeDModels from "./ThreeDModels.tsx"
 import {useMediaQuery} from "react-responsive"
 import {calculateSizes} from "../../constants"
+import ContactButton from "../../components/ContactButton.tsx"
 
 const Hero = () => {
   const isSmall: boolean = useMediaQuery({ maxWidth: 440 })
@@ -13,6 +14,7 @@ const Hero = () => {
     <section className="min-h-screen w-full flex flex-col relative">
       <Texts />
       <ThreeDModels sizes={sizes} isMobile={isMobile} />
+      <ContactButton />
     </section>
   )
 }

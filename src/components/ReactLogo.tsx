@@ -14,7 +14,7 @@ export default function ReactLogo (props: ReactLogoProps) {
 
   return (
     <Float floatIntensity={1}>
-      <group scale={0.3} dispose={null} {...props}>
+      <group scale={0.5} dispose={null} {...props}>
         <mesh
           geometry={nodes['React-Logo_Material002_0'].geometry}
           material={materials['Material.002']}

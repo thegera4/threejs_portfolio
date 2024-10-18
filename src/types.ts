@@ -1,6 +1,7 @@
 import React from "react"
 import {GLTF} from "three-stdlib"
 import {Mesh} from "three"
+import * as THREE from "three"
 
 /** Navigation Links */
 export type NavLink = { id: number, name: string, href: string }
@@ -36,7 +37,7 @@ export interface CalculateSizesReturnType {
   ringPosition: number[]
   deskPosition: number[]
   reactLogoPosition: number[]
-  targetPosition: number[]
+  jsLogoPosition: number[]
   cubePosition: number[]
 }
 
@@ -49,11 +50,6 @@ export interface ThreeDModelProps {
 /** FloatingIcons component props */
 export interface FloatingIconsProps {
   sizes: CalculateSizesReturnType
-}
-
-/** Target component props */
-export interface TargetProps {
-  position: [number, number, number]
 }
 
 /** ReactLogo component props */
@@ -93,4 +89,15 @@ export interface ButtonProps {
   name: string
   isBeam: boolean
   containerClass: string
+}
+
+/** Custom type for JSLogo GLTF */
+export interface JSLogoGLTF {
+  nodes: { Object_2: THREE.Mesh }
+  materials: { mat_3220964: THREE.MeshStandardMaterial }
+}
+
+/** JSLogo component props */
+export interface JSLogoProps {
+  position: [number, number, number]
 }

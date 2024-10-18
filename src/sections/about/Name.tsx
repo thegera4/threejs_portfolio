@@ -4,9 +4,10 @@ const Name = () => {
       <div className="grid-container">
         <img src="/assets/grid1.png" alt="grid1" className="w-full sm:h-[276px] h-fit object-contain"/>
         <div>
-          <p className="grid-headtext">Hi, I'm Gerardo</p>
+          <p className="grid-headtext">About Me</p>
           <p className="grid-subtext">
-            I'm a Mechatronics engineer that have worked as a Full stack developer for 3 years.
+            With 3 years of professional experience as a full stack developer,
+            I enjoy learning new things, video games and music.
           </p>
         </div>
       </div>

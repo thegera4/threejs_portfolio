@@ -1,12 +1,16 @@
-import {useState} from "react"
+import {Suspense, useState} from "react"
 import {myProjects} from "../../constants"
 import {Project} from "../../types.ts"
 import NavigationControls from "./NavigationControls.tsx"
 import TechStack from "./TechStack.tsx"
 import LinkTextIcon from "../../components/LinkTextIcon.tsx"
-import ProjectTexts from "./ProjectTexts.tsx";
-import ProjectLogo from "./ProjectLogo.tsx";
-import ProjectSpotlight from "./ProjectSpotlight.tsx";
+import ProjectTexts from "./ProjectTexts.tsx"
+import ProjectLogo from "./ProjectLogo.tsx"
+import ProjectSpotlight from "./ProjectSpotlight.tsx"
+import {Canvas} from "@react-three/fiber"
+import {Center, OrbitControls} from "@react-three/drei"
+import CanvasLoader from "../../components/CanvasLoader.tsx"
+import DemoComputer from "../../components/DemoComputer.tsx"
 
 const Projects = () => {
 
@@ -26,6 +30,20 @@ const Projects = () => {
             <LinkTextIcon href={currentProject.href} text="Check Demo" image="/assets/arrow-up.png"/>
           </div>
           <NavigationControls setCurrentProjectIndex={setCurrentProjectIndex} projects={myProjects}/>
+        </div>
+        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+          <Canvas>
+            <ambientLight intensity={Math.PI}/>
+            <directionalLight position={[10, 10, 5]}/>
+            <Center>
+              <Suspense fallback={<CanvasLoader/>}>
+                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                  <DemoComputer texture={currentProject.texture}/>
+                </group>
+              </Suspense>
+            </Center>
+            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false}/>
+          </Canvas>
         </div>
       </div>
     </section>

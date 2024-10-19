@@ -157,3 +157,33 @@ export interface ProjectLogoProps {
 export interface ProjectSpotlightProps {
   currentProject: Project
 }
+
+/** Custom type for DemoPCGLTF */
+export type DemoPCGLTF = GLTF & {
+  nodes: {
+    ['monitor-screen']: THREE.Mesh
+    ['Monitor-B-_computer_0_1']: THREE.Mesh
+    ['Monitor-B-_computer_0_2']: THREE.Mesh
+    ['Monitor-B-_computer_0_3']: THREE.Mesh
+    ['Monitor-B-_computer_0_4']: THREE.Mesh
+    ['Monitor-B-_computer_0_5']: THREE.Mesh
+    ['Monitor-B-_computer_0_6']: THREE.Mesh
+    ['Monitor-B-_computer_0_7']: THREE.Mesh
+    ['Monitor-B-_computer_0_8']: THREE.Mesh
+  }
+  materials: {
+    computer: THREE.MeshStandardMaterial
+    base__0: THREE.MeshStandardMaterial
+    Material_36: THREE.MeshStandardMaterial
+    Material_35: THREE.MeshStandardMaterial
+    Material_34: THREE.MeshStandardMaterial
+    keys: THREE.MeshStandardMaterial
+    keys2: THREE.MeshStandardMaterial
+    Material_37: THREE.MeshStandardMaterial
+  }
+}
+
+/** DemoComputer component props */
+export interface DemoComputerProps {
+  texture: string
+}

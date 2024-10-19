@@ -1,12 +1,12 @@
 
-import {NavLinks, CalculateSizesReturnType, CalculateSizesArgsType} from '../types'
+import {NavLinks, CalculateSizesReturnType, CalculateSizesArgsType, Project} from '../types'
 
 export const navLinks: NavLinks = [
   { id: 1, name: 'Home', href: '#home' },
   { id: 2, name: 'About', href: '#about' },
   { id: 3, name: 'Work', href: '#work' },
   { id: 4, name: 'Contact', href: '#contact' },
-];
+]
 
 export const clientReviews = [
   {
@@ -41,9 +41,9 @@ export const clientReviews = [
     review:
       'Gerardo was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
   },
-];
+]
 
-export const myProjects = [
+export const myProjects: Project[] = [
   {
     title: 'Podcastr - AI Podcast Platform',
     desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
@@ -231,7 +231,7 @@ export const myProjects = [
       },
     ],
   },
-];
+]
 
 export const calculateSizes = (args: CalculateSizesArgsType): CalculateSizesReturnType => {
   return {
@@ -272,4 +272,4 @@ export const workExperiences = [
     icon: '/assets/notion.svg',
     animation: 'salute',
   },
-];
+]

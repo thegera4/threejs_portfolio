@@ -101,3 +101,59 @@ export interface JSLogoGLTF {
 export interface JSLogoProps {
   position: [number, number, number]
 }
+
+/** Type for ProjectTag */
+export type ProjectTag = { id: number, name: string, path: string }
+/** Type for a Project */
+export interface Project {
+  title: string
+  desc: string
+  subdesc: string
+  href: string
+  texture: string
+  logo: string
+  logoStyle: {
+    backgroundColor: string
+    border: string
+    boxShadow: string
+    background?: string
+  }
+  spotlight: string
+  tags: ProjectTag[]
+}
+
+/** Type for handleNavigation utility function */
+export type handleNavigationType = (direction: string, setter: React.Dispatch<React.SetStateAction<number>>, projects: Project[]) => void
+
+/** Type for NavigationControls Component */
+export interface NavigationControlsProps {
+  setCurrentProjectIndex: React.Dispatch<React.SetStateAction<number>>
+  projects: Project[]
+}
+
+/** Type for TechStack Component */
+export interface TechStackProps {
+  currentProject: Project
+}
+
+/** Type for LinkTextIcon Component */
+export interface LinkTextIconProps {
+  href: string
+  text: string
+  image: string
+}
+
+/** Type for ProjectTexts Component */
+export interface ProjectTextsProps {
+  currentProject: Project
+}
+
+/** Type for ProjectLogo Component */
+export interface ProjectLogoProps {
+  currentProject: Project
+}
+
+/** Type for ProjectSpotlight Component */
+export interface ProjectSpotlightProps {
+  currentProject: Project
+}

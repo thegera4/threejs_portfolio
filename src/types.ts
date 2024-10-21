@@ -40,6 +40,8 @@ export interface CalculateSizesReturnType {
   jsLogoPosition: number[]
   cubePosition: number[]
 }
+/** Custom type for calculateSizes function */
+export type CalculateSizesType = (args: CalculateSizesArgsType) => CalculateSizesReturnType
 
 /** ThreeDModel component props */
 export interface ThreeDModelProps {
@@ -187,3 +189,32 @@ export type DemoPCGLTF = GLTF & {
 export interface DemoComputerProps {
   texture: string
 }
+
+/** ProjectsComputer component props */
+export interface ProjectsComputerProps {
+  currentProject: Project
+}
+
+/** Client review type */
+export type ClientReview = {
+  id: number
+  name: string
+  position: string
+  review: string
+  img: string
+}
+/** Client reviews array */
+export type ClientReviewsType = ClientReview[]
+
+/** Job type */
+export type Job = {
+  id: number
+  name: string
+  pos: string
+  duration: string
+  title: string
+  icon: string
+  animation: string
+}
+/** WorkExperiencesType array */
+export type WorkExperiencesType = Job[]

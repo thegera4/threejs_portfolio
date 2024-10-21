@@ -1,5 +1,6 @@
 
-import {NavLinks, CalculateSizesReturnType, CalculateSizesArgsType, Project} from '../types'
+import {NavLinks, CalculateSizesReturnType, CalculateSizesArgsType, Project, CalculateSizesType,
+  ClientReviewsType, WorkExperiencesType} from '../types'
 
 export const navLinks: NavLinks = [
   { id: 1, name: 'Home', href: '#home' },
@@ -8,7 +9,7 @@ export const navLinks: NavLinks = [
   { id: 4, name: 'Contact', href: '#contact' },
 ]
 
-export const clientReviews = [
+export const clientReviews: ClientReviewsType = [
   {
     id: 1,
     name: 'Emily Johnson',
@@ -233,7 +234,7 @@ export const myProjects: Project[] = [
   },
 ]
 
-export const calculateSizes = (args: CalculateSizesArgsType): CalculateSizesReturnType => {
+export const calculateSizes: CalculateSizesType = (args: CalculateSizesArgsType): CalculateSizesReturnType => {
   return {
     deskScale: args.isSmall ? 0.05 : args.isMobile ? 0.06 : 0.065,
     deskPosition: args.isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
@@ -244,7 +245,7 @@ export const calculateSizes = (args: CalculateSizesArgsType): CalculateSizesRetu
   }
 }
 
-export const workExperiences = [
+export const workExperiences: WorkExperiencesType = [
   {
     id: 1,
     name: 'Framer',

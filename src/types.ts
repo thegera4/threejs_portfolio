@@ -218,3 +218,14 @@ export type Job = {
 }
 /** WorkExperiencesType array */
 export type WorkExperiencesType = Job[]
+
+/** Form data type */
+export type ContactFormData = { name: string, email: string, message: string }
+/** Form component props */
+export interface FormProps {
+  formData: ContactFormData
+  isLoading: boolean
+  formRef: React.RefObject<HTMLFormElement>
+  handleSubmit: (e: React.FormEvent) => void
+  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+}

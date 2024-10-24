@@ -1,20 +1,33 @@
 import React, {useRef, useState} from "react"
 import {ContactFormData} from "../../types.ts"
 import Form from "./Form.tsx"
+import emailjs from "@emailjs/browser"
 
 const Contact = () => {
-
   const formRef = useRef<HTMLFormElement>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [formData, setFormData] = useState<ContactFormData>({ name: '', email: '', message: '' })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void =>
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => setFormData({ ...formData, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e: React.FormEvent): void => {
+  const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault()
     setIsLoading(true)
-    console.log(formData) // Change this line when the logic is implemented
+    try{
+      await emailjs.send(
+        import.meta.env.VITE_SERVICE_ID!,
+        import.meta.env.VITE_TEMPLATE_ID!,
+        {from_name: formData.name, to_name: "Gerardo", from_email: formData.email, to_email: "thegera4@hotmail.com", message: formData.message},
+        import.meta.env.VITE_PUBLIC_KEY!
+      )
+      alert("Your message has been sent!")
+      setFormData({ name: '', email: '', message: '' })
+    } catch (e) {
+      console.error("Error in email service: " + e)
+      alert("An error occurred with the email service. Please try again later.")
+    } finally {
+      setIsLoading(false)
+    }
     formRef!.current!.reset()
     setIsLoading(false)
   }
@@ -34,5 +47,4 @@ const Contact = () => {
     </section>
   )
 }
-
 export default Contact

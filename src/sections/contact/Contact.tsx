@@ -20,6 +20,7 @@ const Contact = () => {
         {from_name: formData.name, to_name: "Gerardo", from_email: formData.email, to_email: "thegera4@hotmail.com", message: formData.message},
         import.meta.env.VITE_PUBLIC_KEY!
       )
+      //TODO: substitute the alerts with a custom snackbar component
       alert("Your message has been sent!")
       setFormData({ name: '', email: '', message: '' })
     } catch (e) {

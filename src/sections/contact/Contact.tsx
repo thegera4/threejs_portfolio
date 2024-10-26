@@ -1,14 +1,19 @@
 import React, {useRef, useState} from "react"
-import {ContactFormData} from "../../types.ts"
+import {ContactFormData, ToastType} from "../../types.ts"
 import Form from "./Form.tsx"
 import emailjs from "@emailjs/browser"
+import Toast from "../../components/Toast.tsx"
+import {showToast} from "../../utils/contact.ts"
 
 const Contact = () => {
+
   const formRef = useRef<HTMLFormElement>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [formData, setFormData] = useState<ContactFormData>({ name: '', email: '', message: '' })
+  const [toast, setToast] = useState<ToastType>(null)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => setFormData({ ...formData, [e.target.name]: e.target.value })
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void =>
+    setFormData({ ...formData, [e.target.name]: e.target.value })
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault()
@@ -20,12 +25,11 @@ const Contact = () => {
         {from_name: formData.name, to_name: "Gerardo", from_email: formData.email, to_email: "thegera4@hotmail.com", message: formData.message},
         import.meta.env.VITE_PUBLIC_KEY!
       )
-      //TODO: substitute the alerts with a custom snackbar component
-      alert("Your message has been sent!")
+      showToast("success", "Thanks for your message!", setToast)
       setFormData({ name: '', email: '', message: '' })
     } catch (e) {
       console.error("Error in email service: " + e)
-      alert("An error occurred with the email service. Please try again later.")
+      showToast("error", "Error with email service, try again later.", setToast)
     } finally {
       setIsLoading(false)
     }
@@ -40,12 +44,15 @@ const Contact = () => {
         <div className="contact-container">
           <h3 className="head-text">Let's Talk</h3>
           <p className="text-lg text-white-600 mt-3">
-            Whether you're looking to build something new, or just need some help with what you already have, I'm here to help.
+            Whether you're looking to build something new, or just need some help with what you already have, I'm here
+            to help.
           </p>
           <Form formData={formData} isLoading={isLoading} formRef={formRef} handleSubmit={handleSubmit} handleChange={handleChange}/>
         </div>
       </div>
+      { toast && <Toast type={toast.type} text={toast.text} /> }
     </section>
   )
 }
+
 export default Contact

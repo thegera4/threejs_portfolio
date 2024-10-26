@@ -1,4 +1,4 @@
-import {clientReviews} from "../../constants"
+/*import {clientReviews} from "../../constants"
 import {ClientReview} from "../../types.ts"
 
 const Clients = () => {
@@ -31,4 +31,4 @@ const Clients = () => {
     </section>
   )
 }
-export default Clients
+export default Clients*/

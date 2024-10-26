@@ -16,7 +16,7 @@ const Projects = () => {
 
   return (
     <section className="c-space my-20">
-      <p className="head-text">My work</p>
+      <p className="head-text">Some of my projects</p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
           <ProjectSpotlight currentProject={currentProject}/>

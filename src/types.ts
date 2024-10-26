@@ -195,17 +195,6 @@ export interface ProjectsComputerProps {
   currentProject: Project
 }
 
-/** Client review type */
-export type ClientReview = {
-  id: number
-  name: string
-  position: string
-  review: string
-  img: string
-}
-/** Client reviews array */
-export type ClientReviewsType = ClientReview[]
-
 /** Job type */
 export type Job = {
   id: number
@@ -229,3 +218,67 @@ export interface FormProps {
   handleSubmit: (e: React.FormEvent) => void
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
+
+/** Toast type */
+export type ToastType = { type: string; text: string } | null
+/** Toast component props */
+export interface ToastProps {
+  type: string
+  text: string
+}
+
+/** Custom type for Avatar3DProps */
+export interface Avatar3DProps {
+  animationName: string
+  position: [number, number, number]
+  scale: number
+}
+
+/** Custom type for Avatar3DGLTF */
+export type Avatar3DGLTF = GLTF & {
+  nodes: {
+    EyeLeft: THREE.SkinnedMesh
+    EyeRight: THREE.SkinnedMesh
+    Wolf3D_Head: THREE.SkinnedMesh
+    Wolf3D_Teeth: THREE.SkinnedMesh
+    Wolf3D_Hair: THREE.SkinnedMesh
+    Wolf3D_Glasses: THREE.SkinnedMesh
+    Wolf3D_Outfit_Top: THREE.SkinnedMesh
+    Wolf3D_Outfit_Bottom: THREE.SkinnedMesh
+    Wolf3D_Outfit_Footwear: THREE.SkinnedMesh
+    Wolf3D_Body: THREE.SkinnedMesh
+    Hips: THREE.Bone
+  }
+  materials: {
+    Wolf3D_Eye: THREE.MeshStandardMaterial
+    Wolf3D_Skin: THREE.MeshStandardMaterial
+    Wolf3D_Teeth: THREE.MeshStandardMaterial
+    Wolf3D_Hair: THREE.MeshStandardMaterial
+    Wolf3D_Glasses: THREE.MeshStandardMaterial
+    Wolf3D_Outfit_Top: THREE.MeshStandardMaterial
+    Wolf3D_Outfit_Bottom: THREE.MeshStandardMaterial
+    Wolf3D_Outfit_Footwear: THREE.MeshStandardMaterial
+    Wolf3D_Body: THREE.MeshPhysicalMaterial
+  }
+}
+
+/** Custom type for PersonalAvatarProps */
+export interface PersonalAvatarProps {
+  animationName: string
+}
+
+/** Custom type for JobsTimelineProps */
+export interface JobsTimelineProps {
+  setAnimationName: React.Dispatch<React.SetStateAction<string>>
+}
+
+/** Client review type */
+/*export type ClientReview = {
+  id: number
+  name: string
+  position: string
+  review: string
+  img: string
+}*/
+/** Client reviews array */
+/*export type ClientReviewsType = ClientReview[]*/

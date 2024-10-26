@@ -87,17 +87,17 @@ body {
   }
 
   /* clients section */
-  .client-container {
+  /*.client-container {
     @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
-  }
+  }*/
 
-  .client-review {
+  /*.client-review {
     @apply rounded-lg md:p-10 p-5 col-span-1 bg-black-300 bg-opacity-50;
-  }
+  }*/
 
-  .client-content {
+  /*.client-content {
     @apply flex lg:flex-row flex-col justify-between lg:items-center items-start gap-5 mt-7;
-  }
+  }*/
 
   /*  work experience section */
   .work-container {
@@ -149,6 +149,11 @@ body {
   .social-icon {
     @apply w-12 h-12 rounded-full flex justify-center items-center bg-black-300 border border-black-200;
   }
+
+  /* toast */
+  .toast-container {
+    @apply fixed bottom-5 right-5 z-50 text-white-800 py-2 px-3 rounded-lg;
+  }
 }
 
 .waving-hand {
@@ -159,7 +164,7 @@ body {
   display: inline-block;
 }
 
-.arrow-gradient {
+/*.arrow-gradient {
   background-image: linear-gradient(
           to right,
           rgba(255, 255, 255, 0.1) 10%,
@@ -167,7 +172,7 @@ body {
           rgba(255, 255, 255, 0.000025) 50%,
           rgba(255, 255, 255, 0.025) 100%
   );
-}
+}*/
 
 @keyframes wave-animation {
   0% {

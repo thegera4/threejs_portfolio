@@ -1,6 +1,6 @@
 
-import {NavLinks, CalculateSizesReturnType, CalculateSizesArgsType, Project, CalculateSizesType,
-  ClientReviewsType, WorkExperiencesType} from '../types'
+import {NavLinks, CalculateSizesReturnType, CalculateSizesArgsType, Project, CalculateSizesType, WorkExperiencesType
+  /*ClientReviewsType,*/} from '../types'
 
 export const navLinks: NavLinks = [
   { id: 1, name: 'Home', href: '#home' },
@@ -9,7 +9,7 @@ export const navLinks: NavLinks = [
   { id: 4, name: 'Contact', href: '#contact' },
 ]
 
-export const clientReviews: ClientReviewsType = [
+/*export const clientReviews: ClientReviewsType = [
   {
     id: 1,
     name: 'Emily Johnson',
@@ -42,7 +42,7 @@ export const clientReviews: ClientReviewsType = [
     review:
       'Gerardo was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
   },
-]
+]*/
 
 export const myProjects: Project[] = [
   {
@@ -248,29 +248,20 @@ export const calculateSizes: CalculateSizesType = (args: CalculateSizesArgsType)
 export const workExperiences: WorkExperiencesType = [
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
-    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: '/assets/framer.svg',
-    animation: 'victory',
-  },
-  {
-    id: 2,
-    name: 'Figma',
-    pos: 'Web Developer',
-    duration: '2020 - 2022',
-    title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: '/assets/figma.svg',
+    name: 'Financiera Independencia',
+    pos: 'Front End Developer',
+    duration: '2022 - Current',
+    title: "I'm responsible for developing and maintaining several web apps. I work closely with the product team to create engaging user experiences and ensure the technical feasibility of UI/UX designs. I also collaborate with backend developers to integrate APIs and improve app performance.",
+    icon: '/assets/findep.webp',
     animation: 'clapping',
   },
   {
-    id: 3,
-    name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: '/assets/notion.svg',
+    id: 2,
+    name: 'Manufacturing',
+    pos: 'Different Engineering Positions',
+    duration: '2011 - 2022',
+    title: "I worked in various engineering roles in several manufacturing industries, where I gained valuable experience in process optimization, quality control, and project management. I developed a strong foundation in engineering principles.",
+    icon: '/assets/manufacture.svg',
     animation: 'salute',
   },
 ]

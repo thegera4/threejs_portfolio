@@ -9,7 +9,6 @@ const Hero = () => {
   const isMobile: boolean = useMediaQuery({ maxWidth: 768 })
   const isTablet: boolean = useMediaQuery({ maxWidth: 1024, minWidth: 768 })
   const sizes = calculateSizes({ isSmall, isMobile, isTablet })
-
   return (
     <section className="min-h-screen w-full flex flex-col relative">
       <Texts />
@@ -18,5 +17,4 @@ const Hero = () => {
     </section>
   )
 }
-
 export default Hero

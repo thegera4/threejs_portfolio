@@ -1,4 +1,4 @@
-import {useGSAP} from '@gsap/react'
+/*import {useGSAP} from '@gsap/react'
 import {Center, useTexture} from '@react-three/drei'
 import gsap from 'gsap'
 import {useCallback, useRef} from 'react'
@@ -36,7 +36,7 @@ const Rings = ({ position }: RingsProps) => {
         )
     },
     { dependencies: position },
-  );
+  )
 
   return (
     <Center>
@@ -52,4 +52,4 @@ const Rings = ({ position }: RingsProps) => {
   )
 }
 
-export default Rings
+export default Rings*/

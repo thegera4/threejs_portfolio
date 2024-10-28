@@ -39,12 +39,11 @@ export type CalculateSizesArgsType ={ isSmall: boolean, isMobile: boolean, isTab
 /** Custom types for calculateSizes return */
 export interface CalculateSizesReturnType {
   deskScale: number
-  //ringPosition: number[]
   javaLogoPosition: number[]
   deskPosition: number[]
   reactLogoPosition: number[]
   jsLogoPosition: number[]
-  cubePosition: number[]
+  pythonLogoPosition: number[]
 }
 /** Custom type for calculateSizes function */
 export type CalculateSizesType = (args: CalculateSizesArgsType) => CalculateSizesReturnType
@@ -79,6 +78,16 @@ export interface CubeProps {
 /** Custom type for Cube GLTF */
 export interface CubeGLTF {
   nodes: { Cube: Mesh }
+}
+
+/** Custom type for PythonLogo GLTF */
+export type PythonLogoGLTF = GLTF & {
+  nodes: {
+    Python_Python_0: THREE.Mesh
+  }
+  materials: {
+    Python: THREE.MeshStandardMaterial
+  }
 }
 
 /** Rings component props */

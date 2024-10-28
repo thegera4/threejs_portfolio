@@ -10,7 +10,7 @@ const Hero = () => {
   const isTablet: boolean = useMediaQuery({ maxWidth: 1024, minWidth: 768 })
   const sizes = calculateSizes({ isSmall, isMobile, isTablet })
   return (
-    <section className="min-h-screen w-full flex flex-col relative">
+    <section className="min-h-screen w-full flex flex-col relative" id="home">
       <Texts />
       <ThreeDModels sizes={sizes} isMobile={isMobile} />
       <ContactButton />

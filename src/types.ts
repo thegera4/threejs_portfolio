@@ -8,6 +8,11 @@ export type NavLink = { id: number, name: string, href: string }
 /** Navigation Links Array */
 export type NavLinks = NavLink[]
 
+/** Custom type for NavItemsProps */
+export interface NavItemsProps {
+  toggleMenu?: () => void
+}
+
 /** Custom type for Hero 3D Model*/
 export interface CustomGLTF extends GLTF {
   nodes: {

@@ -12,7 +12,7 @@ const Navbar = () => {
       {/* Desktop navbar */}
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
-          <a href="/public" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
+          <a href="#home" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
             Gerardo
           </a>
           <button
@@ -29,7 +29,7 @@ const Navbar = () => {
       {/* Mobile navbar */}
       <div className={`nav-sidebar ${isMenuOpen ? 'max-h-screen' : 'max-h-0'}`}>
         {/* Mobile menu */}
-        <nav className="p-5"> <NavItems /> </nav>
+        <nav className="p-5"> <NavItems toggleMenu={toggleMenu}/> </nav>
       </div>
     </header>
   )

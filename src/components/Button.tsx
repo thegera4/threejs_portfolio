@@ -3,7 +3,7 @@ import {ButtonProps} from "../types.ts"
 const Button = ({name, isBeam, containerClass}: ButtonProps) => {
   return (
     <button className={`btn ${containerClass}`}>
-      <a href="#about" className="w-fit">
+      <a href="#about" className="w-full flex items-center justify-center">
         <div className="flex items-center">
         { isBeam &&
           <span className="relative flex h-3 w-3 mr-1">

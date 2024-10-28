@@ -6,7 +6,7 @@ const Texts = () => {
         Hi, I'm Gerardo<span role="img" aria-label="waving-hand" className="waving-hand">👋</span>
       </p>
       <p className="hero_tag text-gray_gradient">
-        Passion for technology.
+        Full stack developer
       </p>
     </div>
   )

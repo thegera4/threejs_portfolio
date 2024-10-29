@@ -10,7 +10,7 @@ export default function DemoComputer({texture}: DemoComputerProps) {
 
   const group = useRef<THREE.Group>(null)
   const { nodes, materials } = useGLTF('/models/computer.glb') as DemoPCGLTF
-  const txt = useVideoTexture(texture ? texture : '/textures/project/project1.mp4')
+  const txt = useVideoTexture(texture ? texture : '/textures/project/sqlite-browser.mp4')
 
   useEffect(() => { if(txt){ txt.flipY = false } }, [txt])
 

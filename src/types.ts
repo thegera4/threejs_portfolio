@@ -70,16 +70,6 @@ export interface ReactLogoGLTF {
   materials: { 'Material.002': Mesh['material'] }
 }
 
-/** Cube component props */
-export interface CubeProps {
-  position: [number, number, number]
-}
-
-/** Custom type for Cube GLTF */
-export interface CubeGLTF {
-  nodes: { Cube: Mesh }
-}
-
 /** Custom type for PythonLogo GLTF */
 export type PythonLogoGLTF = GLTF & {
   nodes: {
@@ -88,11 +78,6 @@ export type PythonLogoGLTF = GLTF & {
   materials: {
     Python: THREE.MeshStandardMaterial
   }
-}
-
-/** Rings component props */
-export interface RingsProps {
-  position: [number, number, number]
 }
 
 /** Custom type for JavaLogo GLTF */
@@ -317,3 +302,15 @@ export interface JobsTimelineProps {
 }*/
 /** Client reviews array */
 /*export type ClientReviewsType = ClientReview[]*/
+/** Rings component props */
+/*export interface RingsProps {
+  position: [number, number, number]
+}*/
+/** Cube component props */
+/*export interface CubeProps {
+  position: [number, number, number]
+}*/
+/** Custom type for Cube GLTF */
+/*export interface CubeGLTF {
+  nodes: { Cube: Mesh }
+}*/

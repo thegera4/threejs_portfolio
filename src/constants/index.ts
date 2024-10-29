@@ -47,50 +47,14 @@ export const navLinks: NavLinks = [
 
 export const myProjects: Project[] = [
   {
-    title: 'Podcastr - AI Podcast Platform',
-    desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+    title: 'SQLite Viewer-Browser',
+    desc: 'This extension allows you to view (browse) SQLite databases and perform basic operations like update, delete and insert data. ' +
+      'You can install the extension from the Visual Studio Code marketplace by clicking the "Check Demo" button or from the "Extensions" option in the side menu in your VSCode editor.',
     subdesc:
-      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-    href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
-    texture: '/textures/project/project1.mp4',
-    logo: '/assets/project-logo1.png',
-    logoStyle: {
-      backgroundColor: '#2A1816',
-      border: '0.2px solid #36201D',
-      boxShadow: '0px 0px 60px 0px #AA3C304D',
-    },
-    spotlight: '/assets/spotlight1.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
-  {
-    title: 'LiveDoc - Real-Time Google Docs Clone',
-    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
-    subdesc:
-      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
-    texture: '/textures/project/project2.mp4',
-    logo: '/assets/project-logo2.png',
+      ' I made this application as a personal tool to work with SQLite databases. It was made with HTML, CSS and Javascript.',
+    href: 'https://marketplace.visualstudio.com/items?itemName=JuanGerardoMedellinIbarra.sqlite-viewer-browser',
+    texture: '/textures/project/sqlite-browser.mp4',
+    logo: '/assets/sqlite_viewer_logo.png',
     logoStyle: {
       backgroundColor: '#13202F',
       border: '0.2px solid #17293E',
@@ -100,13 +64,45 @@ export const myProjects: Project[] = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
+        name: 'Javascript',
+        path: '/assets/javascript-logo.png',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'HTML',
+        path: 'assets/html-logo.png',
+      },
+      {
+        id: 3,
+        name: 'CSS',
+        path: '/assets/css.png',
+      },
+    ],
+  },
+  {
+    title: 'Admin Dashboard',
+    desc: 'This Full Stack web application is an Admin Dashboard template that includes a custom Auth API as well as Google Authentication. It uses the GetX library for a complete solution in navigation, http requests and state management and MongoDB for database.',
+    subdesc:
+      'The demo data comes from different dummy APIs. The Front End was made with Dart and Flutter. The Back End was made with Typescript, NodeJS and Express.',
+    href: 'https://web-admin-dashboard-flutter.vercel.app/#/auth',
+    texture: '/textures/project/admin-dashboard.mp4',
+    logo: '/assets/dashboard-logo.png',
+    logoStyle: {
+      backgroundColor: '#1C1A43',
+      border: '0.2px solid #252262',
+      boxShadow: '0px 0px 60px 0px #635BFF4D',
+    },
+    spotlight: '/assets/spotlight5.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Dart',
+        path: '/assets/dart-logo.png',
+      },
+      {
+        id: 2,
+        name: 'Flutter',
+        path: 'assets/flutter-logo.png',
       },
       {
         id: 3,
@@ -115,8 +111,18 @@ export const myProjects: Project[] = [
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'NodeJS',
+        path: '/assets/node-logo.png',
+      },
+      {
+        id: 5,
+        name: 'Express',
+        path: '/assets/ex-logo.png',
+      },
+      {
+        id: 6,
+        name: 'Mongo',
+        path: '/assets/mongo-logo.png',
       },
     ],
   },

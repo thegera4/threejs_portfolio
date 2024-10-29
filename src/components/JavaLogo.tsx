@@ -52,7 +52,6 @@ export default function JavaLogo({position}: JavaLogoProps) {
     <React.Fragment>
       <directionalLight position={[100, -100, 100]} intensity={0.7}/>
       <group ref={groupRef} dispose={null} scale={0.7} position={position}>
-        {/*<directionalLight position={[100, -100, 100]} intensity={1} />*/}
         <group name="Sketchfab_Scene">
           <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
             <group name="Root">

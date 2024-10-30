@@ -19,6 +19,9 @@ export const openTab = (value: string): void => {
     case 'privacy':
       window.open('https://app.enzuzo.com/policies/privacy/b69e150c-115f-11ef-be0e-af7e995914ab', '_blank', 'noreferrer')
       break
+    case 'old':
+      window.open('https://nextjs-portfolio-thegera4s-projects.vercel.app/', '_blank', 'noreferrer')
+      break
     default:
       break
   }

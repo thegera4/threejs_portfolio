@@ -21,7 +21,7 @@ const Earth = () => {
         <div>
           <p className="grid-headtext">I'm open to work across most timezones</p>
           <p className="grid-subtext">I'm based in Torreon, Mexico but open to any remote or on-site projects.</p>
-          <Button name="Contact Me" isBeam={true} containerClass="w-full mt-10"/>
+          <Button name="Contact Me" isBeam={true} containerClass="w-full mt-10" href="#contact"/>
         </div>
       </div>
     </div>

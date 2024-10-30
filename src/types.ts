@@ -111,6 +111,7 @@ export interface ButtonProps {
   name: string
   isBeam: boolean
   containerClass: string
+  href: string
 }
 
 /** Custom type for JSLogo GLTF */
@@ -290,6 +291,12 @@ export interface PersonalAvatarProps {
 /** Custom type for JobsTimelineProps */
 export interface JobsTimelineProps {
   setAnimationName: React.Dispatch<React.SetStateAction<string>>
+}
+
+/** Custom type for FooterLinkProps */
+export interface FooterLinkProps {
+  text: string
+  urlName: string
 }
 
 /** Client review type */

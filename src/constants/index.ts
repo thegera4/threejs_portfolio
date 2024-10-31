@@ -48,8 +48,8 @@ export const navLinks: NavLinks = [
 export const myProjects: Project[] = [
   {
     title: 'SQLite Viewer-Browser',
-    desc: 'This extension allows you to view (browse) SQLite databases and perform basic operations like update, delete and insert data. ' +
-      'You can install the extension from the Visual Studio Code marketplace by clicking the "Check Demo" button or from the "Extensions" option in the side menu in your VSCode editor.',
+    desc: 'This extension for VSCode, allows you to view (browse) SQLite databases and perform basic operations like update, delete and insert data. ' +
+      'You can install the extension from the VSCode marketplace by clicking the "Check Demo" button or from the "Extensions" option in the side menu in your VSCode editor.',
     subdesc:
       ' I made this application as a personal tool to work with SQLite databases. It was made with HTML, CSS and Javascript.',
     href: 'https://marketplace.visualstudio.com/items?itemName=JuanGerardoMedellinIbarra.sqlite-viewer-browser',
@@ -78,6 +78,7 @@ export const myProjects: Project[] = [
         path: '/assets/css.png',
       },
     ],
+    mobile: false,
   },
   {
     title: 'Admin Dashboard',
@@ -125,15 +126,64 @@ export const myProjects: Project[] = [
         path: '/assets/mongo-logo.png',
       },
     ],
+    mobile: false,
   },
   {
-    title: 'CarePulse - Health Management System',
-    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+    title: 'E-Commerce',
+    desc: 'This E-Commerce web application is a template for an e-shop. It includes a home page, a product detail page, a bag/cart view and a payment page provided by Stripe. It uses Sanity as a CMS instead of a regular backend.',
     subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
-    texture: '/textures/project/project3.mp4',
-    logo: '/assets/project-logo3.png',
+      'The app was made with Javascript, React, Next.js, Sanity and Stripe (to test the payment use card number 4242 4242 4242 4242, cvc 424 exp. date 04/28 and any fake personal data).',
+    href: 'https://ecommerce-nextjs-sanity-ten.vercel.app/',
+    texture: '/textures/project/ecommerce.mp4',
+    logo: '/assets/shop-bag.webp',
+    logoStyle: {
+      backgroundColor: '#2A1816',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
+    },
+    spotlight: '/assets/spotlight1.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Javascript',
+        path: '/assets/javascript-logo.png',
+      },
+      {
+        id: 2,
+        name: 'CSS',
+        path: '/assets/css.png',
+      },
+      {
+        id: 3,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 4,
+        name: 'NextJs',
+        path: 'assets/nextjs.png',
+      },
+      {
+        id: 5,
+        name: 'Sanity',
+        path: '/assets/sanity.webp',
+      },
+      {
+        id: 6,
+        name: 'Stripe',
+        path: '/assets/stripe.png',
+      },
+    ],
+    mobile: false,
+  },
+  {
+    title: 'GoNext Events',
+    desc: 'This Full Stack web application is a platform to check and schedule events. It includes a home page with a search bar and some filters, an event detail page, a create event form page and a login page. Only logged in users can create events.',
+    subdesc:
+      'The Front End was made with Typescript, React and Next.js. The Back End was made with Go, Gin and a SQLite database is used to store all the data.',
+    href: 'https://nextjs-events-lovat.vercel.app/',
+    texture: '/textures/project/events.mp4',
+    logo: '/assets/events-logo.png',
     logoStyle: {
       backgroundColor: '#60f5a1',
       background:
@@ -145,99 +195,36 @@ export const myProjects: Project[] = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
         name: 'TypeScript',
         path: '/assets/typescript.png',
       },
       {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
-  {
-    title: 'Horizon - Online Banking Platform',
-    desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
-    subdesc:
-      'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
-    texture: '/textures/project/project4.mp4',
-    logo: '/assets/project-logo4.png',
-    logoStyle: {
-      backgroundColor: '#0E1F38',
-      border: '0.2px solid #0E2D58',
-      boxShadow: '0px 0px 60px 0px #2F67B64D',
-    },
-    spotlight: '/assets/spotlight4.png',
-    tags: [
-      {
-        id: 1,
+        id: 2,
         name: 'React.js',
         path: '/assets/react.svg',
       },
       {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'NextJs',
+        path: 'assets/nextjs.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'GO',
+        path: '/assets/go.png',
+      },
+      {
+        id: 5,
+        name: 'Gin',
+        path: '/assets/gin.png',
+      },
+      {
+        id: 6,
+        name: 'SQLite',
+        path: '/assets/sqlite.png',
       },
     ],
-  },
-  {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
-    subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
-    texture: '/textures/project/project5.mp4',
-    logo: '/assets/project-logo5.png',
-    logoStyle: {
-      backgroundColor: '#1C1A43',
-      border: '0.2px solid #252262',
-      boxShadow: '0px 0px 60px 0px #635BFF4D',
-    },
-    spotlight: '/assets/spotlight5.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
+    mobile: false,
   },
 ]
 

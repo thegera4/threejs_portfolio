@@ -143,6 +143,7 @@ export interface Project {
   }
   spotlight: string
   tags: ProjectTag[]
+  mobile: boolean
 }
 
 /** Type for handleNavigation utility function */

@@ -226,6 +226,56 @@ export const myProjects: Project[] = [
     ],
     mobile: false,
   },
+  {
+    title: 'Fake mobile project',
+    desc: 'This Full Stack web application is a platform to check and schedule events. It includes a home page with a search bar and some filters, an event detail page, a create event form page and a login page. Only logged in users can create events.',
+    subdesc:
+      'The Front End was made with Typescript, React and Next.js. The Back End was made with Go, Gin and a SQLite database is used to store all the data.',
+    href: 'https://nextjs-events-lovat.vercel.app/',
+    texture: '/textures/project/events.mp4',
+    logo: '/assets/events-logo.png',
+    logoStyle: {
+      backgroundColor: '#60f5a1',
+      background:
+        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+      border: '0.2px solid rgba(208, 213, 221, 1)',
+      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 2,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 3,
+        name: 'NextJs',
+        path: 'assets/nextjs.png',
+      },
+      {
+        id: 4,
+        name: 'GO',
+        path: '/assets/go.png',
+      },
+      {
+        id: 5,
+        name: 'Gin',
+        path: '/assets/gin.png',
+      },
+      {
+        id: 6,
+        name: 'SQLite',
+        path: '/assets/sqlite.png',
+      },
+    ],
+    mobile: true,
+  },
 ]
 
 export const calculateSizes: CalculateSizesType = (args: CalculateSizesArgsType): CalculateSizesReturnType => {

@@ -227,53 +227,21 @@ export const myProjects: Project[] = [
     mobile: false,
   },
   {
-    title: 'Fake mobile project',
-    desc: 'This Full Stack web application is a platform to check and schedule events. It includes a home page with a search bar and some filters, an event detail page, a create event form page and a login page. Only logged in users can create events.',
+    title: 'More Projects',
+    desc: 'If you want to see more interesting projects, check out my github page.',
     subdesc:
-      'The Front End was made with Typescript, React and Next.js. The Back End was made with Go, Gin and a SQLite database is used to store all the data.',
-    href: 'https://nextjs-events-lovat.vercel.app/',
-    texture: '/textures/project/events.mp4',
-    logo: '/assets/events-logo.png',
+      'You will find more than 100 projects made with different technologies and tools based on the programming languages that I know (Javascript, Typescript, Java, Kotlin, Dart, C# and Go) from mobile applications made with Android, Flutter and React Native, APIs made with Spring boot, .Net, FastApi and Gin, web applications made with vanilla Javascript, Flutter and React, to games made with Android and more.',
+    href: 'https://github.com/thegera4',
+    texture: '',
+    logo: '/assets/github.svg',
     logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
+      backgroundColor: '#000000',
+      background: 'linear-gradient(0deg, #00000090, #00000070), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
       boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+      border: ''
     },
-    spotlight: '/assets/spotlight3.png',
-    tags: [
-      {
-        id: 1,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 2,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 3,
-        name: 'NextJs',
-        path: 'assets/nextjs.png',
-      },
-      {
-        id: 4,
-        name: 'GO',
-        path: '/assets/go.png',
-      },
-      {
-        id: 5,
-        name: 'Gin',
-        path: '/assets/gin.png',
-      },
-      {
-        id: 6,
-        name: 'SQLite',
-        path: '/assets/sqlite.png',
-      },
-    ],
+    spotlight: '/assets/spotlight2.png',
+    tags: [],
     mobile: true,
   },
 ]

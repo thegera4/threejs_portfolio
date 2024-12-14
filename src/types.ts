@@ -350,6 +350,18 @@ export interface DemoPhoneProps {
   texture: string
 }
 
+/** Custom type for GithubGLTFResult */
+export type GithubGLTFResult = GLTF & {
+  nodes: {
+    Object_4: THREE.Mesh
+    Object_5: THREE.Mesh
+  }
+  materials: {
+    glossy_putih: THREE.MeshStandardMaterial
+    github: THREE.MeshStandardMaterial
+  }
+}
+
 /** Client review type */
 /*export type ClientReview = {
   id: number

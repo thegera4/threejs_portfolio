@@ -5,7 +5,7 @@ import JavaLogo from "../../components/JavaLogo.tsx"
 import PythonLogo from "../../components/PythonLogo.tsx"
 
 const FloatingIcons = ({sizes}: FloatingIconsProps) => {
-  return (
+    return (
     <group>
       <JavascriptLogo position={sizes.jsLogoPosition as [number, number, number]} />
       <ReactLogo position={sizes.reactLogoPosition as [number, number, number]} />

@@ -9,6 +9,7 @@ import * as THREE from 'three'
 import React, { useRef, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import {JavaLogoGLTF, JavaLogoProps} from "../types.ts"
+import {useMediaQuery} from "react-responsive"
 import gsap from 'gsap'
 
 export default function JavaLogo({position}: JavaLogoProps) {
@@ -16,6 +17,12 @@ export default function JavaLogo({position}: JavaLogoProps) {
   const groupRef = useRef<THREE.Group>(null)
   const torusRefs = useRef<THREE.Mesh[]>([])
   const { nodes, materials } = useGLTF('/models/java.glb') as JavaLogoGLTF
+
+  const isSmall = useMediaQuery({ maxWidth: 440 })
+  const isMobile = useMediaQuery({ maxWidth: 768 })
+  const isTablet = useMediaQuery({ maxWidth: 1024, minWidth: 768 })
+
+  const scale = isSmall ? 0.5 : isMobile ? 0.5 : isTablet ? 0.6 : 0.7
 
   useEffect(() => {
     if (torusRefs?.current?.length === 0) return
@@ -51,7 +58,7 @@ export default function JavaLogo({position}: JavaLogoProps) {
   return (
     <React.Fragment>
       <directionalLight position={[100, -100, 100]} intensity={0.7}/>
-      <group ref={groupRef} dispose={null} scale={0.7} position={position}>
+      <group ref={groupRef} dispose={null} scale={scale} position={position}>
         <group name="Sketchfab_Scene">
           <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
             <group name="Root">

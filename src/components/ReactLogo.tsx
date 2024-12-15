@@ -7,10 +7,15 @@ Title: React logo
 */
 import { useGLTF, Float } from '@react-three/drei'
 import { ReactLogoProps, ReactLogoGLTF } from "../types.ts"
+import {useMediaQuery} from "react-responsive";
 
 export default function ReactLogo (props: ReactLogoProps) {
 
   const { nodes, materials } = useGLTF('/models/react.glb') as unknown as ReactLogoGLTF
+
+  const isSmall = useMediaQuery({ maxWidth: 440 })
+  const isMobile = useMediaQuery({ maxWidth: 768 })
+  const isTablet = useMediaQuery({ maxWidth: 1024, minWidth: 768 })
 
   return (
     <Float floatIntensity={1}>
@@ -20,7 +25,7 @@ export default function ReactLogo (props: ReactLogoProps) {
           material={materials['Material.002']}
           position={[0, 0.079, 0.181]}
           rotation={[0, 0, -Math.PI / 2]}
-          scale={[0.39, 0.39, 0.5]}
+          scale={isSmall ? [0.30, 0.30, 0.5] : isMobile ? [0.30, 0.30, 0.5] : isTablet ? [0.39, 0.39, 0.5] : [0.39, 0.39, 0.5]}
         />
       </group>
     </Float>

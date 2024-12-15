@@ -10,12 +10,19 @@ import {useGLTF} from '@react-three/drei'
 import {JSLogoGLTF, JSLogoProps} from "../types.ts"
 import * as THREE from "three"
 import {useGSAP} from "@gsap/react"
+import {useMediaQuery} from "react-responsive"
 import gsap from "gsap"
 
 export default function JavascriptLogo(props: JSLogoProps) {
 
   const JSLogoRef = useRef<THREE.Mesh | null>(null)
   const { nodes, materials } = useGLTF('/models/javascript_1.glb') as unknown as JSLogoGLTF
+
+  const isSmall = useMediaQuery({ maxWidth: 440 })
+  const isMobile = useMediaQuery({ maxWidth: 768 })
+  const isTablet = useMediaQuery({ maxWidth: 1024, minWidth: 768 })
+
+  const scale = isSmall ? 0.10 : isMobile ? 0.10 : isTablet ? 0.11 : 0.13
 
   useGSAP(() => {
     // @ts-expect-error/ possible nulls can not be addressed, but we know it is not null
@@ -32,7 +39,7 @@ export default function JavascriptLogo(props: JSLogoProps) {
       <mesh
         {...props}
         ref={JSLogoRef}
-        scale={0.13}
+        scale={scale}
         geometry={nodes.Object_2.geometry}
         material={materials.mat_3220964}
         rotation={[0, 0, 1.8]}

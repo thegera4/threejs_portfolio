@@ -239,6 +239,7 @@ export interface FormProps {
   formRef: React.RefObject<HTMLFormElement>
   handleSubmit: (e: React.FormEvent) => void
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  isMobile: boolean
 }
 
 /** Toast type */

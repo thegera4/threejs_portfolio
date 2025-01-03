@@ -30,7 +30,7 @@ const ThreeDModels = ({sizes, isMobile} : ThreeDModelProps) => {
           <HeroCamera isMobile={isMobile} >
             <HackerRoom position={sizes.deskPosition as Vector3} rotation={[0, -Math.PI, 0]} scale={sizes.deskScale}/>
           </HeroCamera>
-          <FloatingIcons sizes={sizes}/>
+          {!isMobile &&  <FloatingIcons sizes={sizes}/>}
           <ambientLight intensity={1}/>
           <directionalLight position={[10, 10, 10]} intensity={0.5}/>
         </Suspense>

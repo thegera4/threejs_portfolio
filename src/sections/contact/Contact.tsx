@@ -4,9 +4,11 @@ import Form from "./Form.tsx"
 import emailjs from "@emailjs/browser"
 import Toast from "../../components/Toast.tsx"
 import {showToast} from "../../utils/contact.ts"
+import {useMediaQuery} from "react-responsive"
 
 const Contact = () => {
 
+  const isMobile: boolean = useMediaQuery({ maxWidth: 440 })
   const formRef = useRef<HTMLFormElement>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [formData, setFormData] = useState<ContactFormData>({ name: '', email: '', message: '' })
@@ -42,12 +44,12 @@ const Contact = () => {
       <div className="relative min-h-screen flex items-center justify-center flex-col">
         <img src="/assets/terminal.png" alt="terminal background" className="absolute inset-0 min-h-screen"/>
         <div className="contact-container">
-          <h3 className="head-text">Let's Talk</h3>
-          <p className="text-lg text-white-600 mt-3">
+          <h3 className="head-text-contact">Let's Talk</h3>
+          <p className={`${isMobile ? 'text-sm' : 'text-lg'} text-white-600 mt-3`}>
             Whether you're looking to build something new, or just need some help with what you already have, I'm here
             to help.
           </p>
-          <Form formData={formData} isLoading={isLoading} formRef={formRef} handleSubmit={handleSubmit} handleChange={handleChange}/>
+          <Form formData={formData} isLoading={isLoading} formRef={formRef} handleSubmit={handleSubmit} handleChange={handleChange} isMobile={isMobile}/>
         </div>
       </div>
       { toast && <Toast type={toast.type} text={toast.text} /> }

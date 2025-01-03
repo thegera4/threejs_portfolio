@@ -1,8 +1,8 @@
 import {FormProps} from "../../types.ts"
 
-const Form = ({formData, isLoading, formRef, handleSubmit, handleChange}: FormProps) => {
+const Form = ({formData, isLoading, formRef, handleSubmit, handleChange, isMobile}: FormProps) => {
   return (
-    <form ref={formRef} onSubmit={handleSubmit}>
+    <form ref={formRef} onSubmit={handleSubmit} className={isMobile ? "mt-4" : ""}>
       <label className="space-y-3">
         <span className="field-label">Full Name:</span>
         <input required type="text" name="name" value={formData.name} onChange={handleChange} className="field-input" placeholder="John Doe"/>

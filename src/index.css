@@ -22,6 +22,10 @@ body {
     @apply sm:text-4xl text-3xl font-semibold text-gray_gradient;
   }
 
+  .head-text-contact {
+    @apply sm:text-3xl md:text-3xl mt-5 font-semibold text-gray_gradient;
+  }
+
   .nav-ul {
     @apply flex flex-col items-center gap-4 sm:flex-row md:gap-6 relative z-20;
   }
@@ -104,8 +108,12 @@ body {
     @apply grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12;
   }
 
+  .work-container-mobile {
+    @apply mt-5 flex flex-col h-full;
+  }
+
   .work-canvas {
-    @apply col-span-1 rounded-lg bg-black-200 border border-black-300;
+    @apply col-span-1 rounded-lg bg-black-200 border border-black-300 ;
   }
 
   .work-content {
@@ -130,11 +138,11 @@ body {
   }
 
   .field-label {
-    @apply text-lg text-white-600;
+    @apply sm:text-sm md:text-lg text-white-600;
   }
 
   .field-input {
-    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800 shadow-black-200 shadow-2xl focus:outline-none;
+    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 md:text-lg sm:text-sm text-white-800 shadow-black-200 shadow-2xl focus:outline-none;
   }
 
   .field-btn {

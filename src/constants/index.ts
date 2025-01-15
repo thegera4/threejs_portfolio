@@ -47,8 +47,8 @@ export const navLinks: NavLinks = [
 export const myProjects: Project[] = [
   {
     title: 'SQLite Viewer-Browser',
-    desc: 'This extension for VSCode, allows you to view (browse) SQLite databases and perform basic operations like update, delete and insert data. ' +
-      'You can install the extension from the VSCode marketplace by clicking the "Check Demo" button or from the "Extensions" option in the side menu in your VSCode editor.',
+    desc: 'With more than 9000 downloads, this extension for VSCode allows you to view (browse) SQLite databases and perform basic operations like update, delete and insert data. ' +
+      'You can install it from the official VSCode marketplace by clicking the "Check Demo" button or from the "Extensions" option in the side menu in your VSCode editor.',
     subdesc:
       ' I made this application as a personal tool to work with SQLite databases. It was made with HTML, CSS and Javascript.',
     href: 'https://marketplace.visualstudio.com/items?itemName=JuanGerardoMedellinIbarra.sqlite-viewer-browser',
@@ -81,7 +81,7 @@ export const myProjects: Project[] = [
   },
   {
     title: 'Admin Dashboard',
-    desc: 'This Full Stack web application is an Admin Dashboard template that includes a custom Auth API as well as Google Authentication. It uses the GetX library for a complete solution in navigation, http requests and state management and MongoDB for database.',
+    desc: 'With more than 60 github stars, this Full Stack web application is an Admin Dashboard template that includes a custom Auth API as well as Google Authentication. It uses the GetX library for a complete solution in navigation, http requests and state management and MongoDB for database.',
     subdesc:
       'The demo data comes from different dummy APIs. The Front End was made with Dart and Flutter. The Back End was made with Typescript, NodeJS and Express.',
     href: 'https://web-admin-dashboard-flutter.vercel.app/#/auth',

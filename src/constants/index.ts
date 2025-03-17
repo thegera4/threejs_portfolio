@@ -47,10 +47,10 @@ export const navLinks: NavLinks = [
 export const myProjects: Project[] = [
   {
     title: 'SQLite Viewer-Browser',
-    desc: 'With more than 9000 downloads, this extension for VSCode allows you to view (browse) SQLite databases and perform basic operations like update, delete and insert data. ' +
-      'You can install it from the official VSCode marketplace by clicking the "Check Demo" button or from the "Extensions" option in the side menu in your VSCode editor.',
+    desc: 'With over 10,000 downloads, this popular VSCode extension simplifies working with SQLite databases. Effortlessly browse database contents and perform essential operations such as updating, deleting, and inserting data — all within your editor.' +
+      'Discover it on the official VSCode Marketplace by clicking the "Check Demo" button or find it under the "Extensions" menu in your VSCode side panel.',
     subdesc:
-      ' I made this application as a personal tool to work with SQLite databases. It was made with HTML, CSS and Javascript.',
+      'I originally created this application as a personal tool to streamline my work with SQLite databases. It is built using HTML, CSS, and JavaScript.',
     href: 'https://marketplace.visualstudio.com/items?itemName=JuanGerardoMedellinIbarra.sqlite-viewer-browser',
     texture: '/textures/project/sqlite-browser.mp4',
     logo: '/assets/sqlite_viewer_logo.png',

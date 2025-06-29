@@ -13,10 +13,12 @@ export default function Avatar3D({animationName = 'idle', position, scale}: Avat
   const { animations: idleAnimation } = useFBX('/models/animations/idle.fbx')
   const { animations: saluteAnimation } = useFBX('/models/animations/salute.fbx')
   const { animations: clappingAnimation } = useFBX('/models/animations/clapping.fbx')
+  const { animations: victoryAnimation } = useFBX('/models/animations/victory.fbx')
   idleAnimation[0].name = 'idle'
   saluteAnimation[0].name = 'salute'
   clappingAnimation[0].name = 'clapping'
-  const { actions } = useAnimations([idleAnimation[0], saluteAnimation[0], clappingAnimation[0]], groupRef)
+  victoryAnimation[0].name = 'victory'
+  const { actions } = useAnimations([idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]], groupRef)
 
   // When the animationName changes, reset the animation and play the new one
   useEffect(() => {

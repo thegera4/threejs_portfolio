@@ -24,7 +24,7 @@ const Projects = () => {
           <ProjectTexts currentProject={currentProject}/>
           <div className="flex items-center justify-between flex-wrap gap-5">
             <TechStack currentProject={currentProject}/>
-            <LinkTextIcon href={currentProject.href} text={currentProject.mobile ? "Go to Github" : "Check Demo"} image="/assets/arrow-up.png"/>
+            <LinkTextIcon href={currentProject.href} text={currentProject.mobile ? "Go to Github" : "Go to Demo"} image="/assets/arrow-up.png"/>
           </div>
           <NavigationControls setCurrentProjectIndex={setCurrentProjectIndex} projects={myProjects}/>
         </div>

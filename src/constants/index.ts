@@ -47,7 +47,7 @@ export const navLinks: NavLinks = [
 export const myProjects: Project[] = [
   {
     title: 'SQLite Viewer-Browser',
-    desc: 'With over 10,000 downloads, this popular VSCode extension simplifies working with SQLite databases. Effortlessly browse database contents and perform essential operations such as updating, deleting, and inserting data — all within your editor.' +
+    desc: 'With over 17,000 downloads, this popular VSCode extension simplifies working with SQLite databases. Effortlessly browse database contents and perform essential operations such as updating, deleting, and inserting data — all within your editor.' +
       'Discover it on the official VSCode Marketplace by clicking the "Check Demo" button or find it under the "Extensions" menu in your VSCode side panel.',
     subdesc:
       'I originally created this application as a personal tool to streamline my work with SQLite databases. It is built using HTML, CSS, and JavaScript.',
@@ -81,7 +81,7 @@ export const myProjects: Project[] = [
   },
   {
     title: 'Admin Dashboard',
-    desc: 'With more than 60 github stars, this Full Stack web application is an Admin Dashboard template that includes a custom Auth API as well as Google Authentication. It uses the GetX library for a complete solution in navigation, http requests and state management and MongoDB for database.',
+    desc: 'With more than 70 github stars, this Full Stack web application is an Admin Dashboard template that includes a custom Auth API as well as Google Authentication. It uses the GetX library for a complete solution in navigation, http requests and state management and MongoDB for database.',
     subdesc:
       'The demo data comes from different dummy APIs. The Front End was made with Dart and Flutter. The Back End was made with Typescript, NodeJS and Express.',
     href: 'https://web-admin-dashboard-flutter.vercel.app/#/auth',
@@ -123,6 +123,44 @@ export const myProjects: Project[] = [
         id: 6,
         name: 'Mongo',
         path: '/assets/mongo-logo.png',
+      },
+    ],
+    mobile: false,
+  },
+  {
+    title: 'Notudus',
+    desc: 'This mobile application helps you keep productive while securing your data locally in your device. It allows you to create, edit and delete notes, as well as todo lists. You can also search for notes by title or content and use authentication features from your device to protect your most private notes so that only you can access them.',
+    subdesc:
+      'I built this application as a note taking app for personal use and motived by the uncertainty of how third party applications manage the information that you store. It is built using Typescript, React Native, Expo and SQLite.',
+    href: 'https://play.google.com/store/apps/details?id=com.jgmedellin.notudusapp',
+    texture: '/textures/project/notudus.mp4',
+    logo: '/assets/notudus-logo.png',
+    logoStyle: {
+      backgroundColor: '#07564F',
+      border: '0.2px solid #044440',
+      boxShadow: '0px 0px 60px 0px #07564F4D',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 2,
+        name: 'React',
+        path: 'assets/react.svg',
+      },
+      {
+        id: 3,
+        name: 'Expo',
+        path: '/assets/expo-logo.png',
+      },
+      {
+        id: 4,
+        name: 'SQLite',
+        path: '/assets/sqlite.png',
       },
     ],
     mobile: false,
@@ -184,11 +222,9 @@ export const myProjects: Project[] = [
     texture: '/textures/project/events.mp4',
     logo: '/assets/events-logo.png',
     logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
-      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+      backgroundColor: '#07564F',
+      border: '0.2px solid #044440',
+      boxShadow: '0px 0px 60px 0px #07564F4D',
     },
     spotlight: '/assets/spotlight3.png',
     tags: [
@@ -259,15 +295,24 @@ export const calculateSizes: CalculateSizesType = (args: CalculateSizesArgsType)
 export const workExperiences: WorkExperiencesType = [
   {
     id: 1,
+    name: 'Ford Motor Company',
+    pos: 'Software Engineer',
+    duration: '2025 - Current',
+    title: "I'm responsible for developing and maintaining internal web apps that are used by all Ford employees around the world. I work closely with the product team to create engaging user experiences and ensure the technical feasibility of UI/UX designs.",
+    icon: '/assets/ford-logo.png',
+    animation: 'victory',
+  },
+  {
+    id: 2,
     name: 'Financiera Independencia',
     pos: 'Front End Developer',
     duration: '2022 - Current',
-    title: "I'm responsible for developing and maintaining several web apps. I work closely with the product team to create engaging user experiences and ensure the technical feasibility of UI/UX designs. I also collaborate with backend developers to integrate APIs and improve app performance.",
+    title: "I'm responsible for developing and maintaining and designing UX/UI for several web apps. I also collaborate with backend developers to integrate APIs and improve app performance.",
     icon: '/assets/findep.webp',
     animation: 'clapping',
   },
   {
-    id: 2,
+    id: 3,
     name: 'Manufacturing',
     pos: 'Different Engineering Positions',
     duration: '2011 - 2022',

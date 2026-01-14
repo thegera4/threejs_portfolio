@@ -8,12 +8,12 @@ Title: 3D Github Logo
 import * as THREE from 'three'
 import { useRef, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
-import {GithubGLTFResult} from "../types.ts"
+import { GithubGLTFResult } from "../types.ts"
 import gsap from 'gsap'
 
 export default function GithubLogo() {
     const group = useRef<THREE.Group>(null)
-    const { nodes, materials } = useGLTF('/models/github.glb') as GithubGLTFResult
+    const { nodes, materials } = useGLTF('/models/github.glb') as unknown as GithubGLTFResult
 
     useEffect(() => {
         if (group.current) {
@@ -28,7 +28,7 @@ export default function GithubLogo() {
 
     return (
         <group dispose={null}>
-            <group ref={group}  position={[-0.055, 2.945, 6.336]} rotation={[Math.PI / 2, 0, 0]} scale={28.364}>
+            <group ref={group} position={[-0.055, 2.945, 6.336]} rotation={[Math.PI / 2, 0, 0]} scale={28.364}>
                 <mesh geometry={nodes.Object_4.geometry} material={materials.glossy_putih} />
                 <mesh geometry={nodes.Object_5.geometry} material={materials.github} />
             </group>

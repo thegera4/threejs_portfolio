@@ -9,13 +9,13 @@ import * as THREE from 'three'
 import React, { useRef, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import gsap from 'gsap'
-import {PythonLogoGLTF} from "../types.ts"
-import {useMediaQuery} from "react-responsive";
+import { PythonLogoGLTF } from "../types.ts"
+import { useMediaQuery } from "react-responsive";
 
 export default function PythonLogo(props: JSX.IntrinsicElements['group']) {
 
   const groupRef = useRef<THREE.Group>(null)
-  const { nodes, materials } = useGLTF('/models/python.glb') as PythonLogoGLTF
+  const { nodes, materials } = useGLTF('/models/python.glb') as unknown as PythonLogoGLTF
 
   const isSmall = useMediaQuery({ maxWidth: 440 })
   const isMobile = useMediaQuery({ maxWidth: 768 })
@@ -36,12 +36,12 @@ export default function PythonLogo(props: JSX.IntrinsicElements['group']) {
 
   return (
     <React.Fragment>
-    <spotLight position={isSmall ? [7, 5.5, 8] : isMobile ? [10, -5, 8] : isTablet ? [10, -5, 8] : [10, -5, 8]} intensity={20}/>
-    <group ref={groupRef} {...props} dispose={null} scale={0.03}>
-      <group scale={scale}>
-        <mesh geometry={nodes.Python_Python_0.geometry} material={materials.Python} rotation={[-Math.PI / 2, 0, 0]} scale={100}/>
+      <spotLight position={isSmall ? [7, 5.5, 8] : isMobile ? [10, -5, 8] : isTablet ? [10, -5, 8] : [10, -5, 8]} intensity={20} />
+      <group ref={groupRef} {...props} dispose={null} scale={0.03}>
+        <group scale={scale}>
+          <mesh geometry={nodes.Python_Python_0.geometry} material={materials.Python} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        </group>
       </group>
-    </group>
     </React.Fragment>
   )
 }

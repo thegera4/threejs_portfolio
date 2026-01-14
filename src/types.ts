@@ -1,6 +1,6 @@
 import React from "react"
-import {GLTF} from "three-stdlib"
-import {Mesh} from "three"
+import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { Mesh } from "three"
 import * as THREE from "three"
 
 /** Navigation Links */
@@ -35,7 +35,7 @@ export interface CustomGLTF extends GLTF {
 }
 
 /** Custom types for calculateSizes arguments */
-export type CalculateSizesArgsType ={ isSmall: boolean, isMobile: boolean, isTablet: boolean }
+export type CalculateSizesArgsType = { isSmall: boolean, isMobile: boolean, isTablet: boolean }
 /** Custom types for calculateSizes return */
 export interface CalculateSizesReturnType {
   deskScale: number

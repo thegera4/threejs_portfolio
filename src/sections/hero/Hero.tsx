@@ -1,7 +1,7 @@
 import Texts from "./Texts.tsx"
 import ThreeDModels from "./ThreeDModels.tsx"
-import {useMediaQuery} from "react-responsive"
-import {calculateSizes} from "../../constants"
+import { useMediaQuery } from "react-responsive"
+import { calculateSizes } from "../../constants"
 import ContactButton from "../../components/ContactButton.tsx"
 
 const Hero = () => {

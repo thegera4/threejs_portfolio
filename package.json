@@ -1,7 +1,7 @@
 {
   "name": "juan-gerardo-meldellin-portfolio",
-  "private": true,
-  "version": "1.0.3",
+  "private": false,
+  "version": "1.0.4",
   "type": "module",
   "scripts": {
     "dev": "vite",

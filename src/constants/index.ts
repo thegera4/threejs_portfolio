@@ -1,5 +1,7 @@
-import {NavLinks, CalculateSizesReturnType, CalculateSizesArgsType, Project, CalculateSizesType,
-  WorkExperiencesType, /*ClientReviewsType,*/} from '../types'
+import {
+  NavLinks, CalculateSizesReturnType, CalculateSizesArgsType, Project, CalculateSizesType,
+  WorkExperiencesType, /*ClientReviewsType,*/
+} from '../types'
 
 export const navLinks: NavLinks = [
   { id: 1, name: 'Home', href: '#home' },

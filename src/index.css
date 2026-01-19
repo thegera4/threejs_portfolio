@@ -23,7 +23,7 @@ body {
   }
 
   .head-text-contact {
-    @apply sm:text-3xl md:text-3xl mt-5 font-semibold text-gray_gradient;
+    @apply sm:text-3xl md:text-3xl font-semibold text-gray_gradient;
   }
 
   .nav-ul {
@@ -134,7 +134,7 @@ body {
 
   /* contact section */
   .contact-container {
-    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
+    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-10;
   }
 
   .field-label {

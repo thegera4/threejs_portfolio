@@ -17,7 +17,7 @@ test.describe('Projects Section', () => {
         await nextBtn.click();
 
         // Verify second project is visible
-        await expect(page.getByText('Admin Dashboard', { exact: true })).toBeVisible();
+        await expect(page.getByText('Cenas en Columpios (Dinners on Swings)', { exact: true })).toBeVisible();
     });
 
     test('should have working links to demo/repo', async ({ page }) => {

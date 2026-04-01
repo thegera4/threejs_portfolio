@@ -11,7 +11,7 @@ test.describe('Navigation', () => {
         const nav = page.locator('header');
         await expect(nav).toBeVisible();
 
-        const links = ['Home', 'About', 'Work', 'Contact'];
+        const links = ['Home', 'About', 'Projects', 'Work', 'Contact'];
         for (const linkText of links) {
             const link = nav.locator(`.sm\\:flex a:has-text("${linkText}")`);
             await expect(link).toBeVisible();

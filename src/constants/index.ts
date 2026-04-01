@@ -49,7 +49,7 @@ export const navLinks: NavLinks = [
 export const myProjects: Project[] = [
   {
     title: 'SQLite Viewer-Browser',
-    desc: 'With over 25,000 downloads, this popular VSCode extension simplifies working with SQLite databases. Effortlessly browse database contents and perform essential operations such as updating, deleting, and inserting data — all within your editor.' +
+    desc: 'With over 29,000 downloads, this popular VSCode extension simplifies working with SQLite databases. Effortlessly browse database contents and perform essential operations such as updating, deleting, and inserting data — all within your editor.' +
       ' Discover it on the official VSCode Marketplace by clicking the "Check Demo" button or find it under the "Extensions" menu in your VSCode side panel.',
     subdesc:
       'I originally created this application as a personal tool to streamline my work with SQLite databases. It is built using HTML, CSS, and JavaScript.',
@@ -77,6 +77,44 @@ export const myProjects: Project[] = [
         id: 3,
         name: 'CSS',
         path: '/assets/css.png',
+      },
+    ],
+    mobile: false,
+  },
+  {
+    title: 'Cenas en Columpios (Dinners on Swings)',
+    desc: 'This web application was built using Typescript, React, NextJS, Sanity, Mercado Pago, Clerk and an AI agent (chatbot) powered by DeepSeek LLM to answer customer questions related to their reservations or the menu offered by Cool Morning.',
+    subdesc:
+      'Cool Morning is a small company from Torreón, Mexico that partners with other local businesses to offer unique experiences. The purpose of this application is to provide a platform for customers to book a special dinner in a unique setting and for the business to manage their reservations, customers and menu.',
+    href: 'https://www.cenasencolumpios.com.mx/',
+    texture: '/textures/project/cenas.mp4',
+    logo: '/assets/cool-morning-icon.png',
+    logoStyle: {
+      backgroundColor: '#07564F',
+      border: '0.2px solid #044440',
+      boxShadow: '0px 0px 60px 0px #07564F4D',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 2,
+        name: 'React',
+        path: 'assets/react.svg',
+      },
+      {
+        id: 3,
+        name: 'NextJS',
+        path: '/assets/nextjs.png',
+      },
+      {
+        id: 4,
+        name: 'Sanity',
+        path: '/assets/sanity.webp',
       },
     ],
     mobile: false,
@@ -308,8 +346,8 @@ export const workExperiences: WorkExperiencesType = [
     id: 2,
     name: 'Financiera Independencia',
     pos: 'Front End Developer',
-    duration: '2022 - Current',
-    title: "I'm responsible for developing and maintaining and designing UX/UI for several web apps. I also collaborate with backend developers to integrate APIs and improve app performance.",
+    duration: '2022 - 2026',
+    title: "Responsible for developing, maintaining and designing UX/UI for web applications. I also collaborated with backend developers to integrate APIs and improve app performance.",
     icon: '/assets/findep.webp',
     animation: 'clapping',
   },

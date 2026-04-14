@@ -8,7 +8,8 @@ const Hero = () => {
   const isSmall: boolean = useMediaQuery({ maxWidth: 440 })
   const isMobile: boolean = useMediaQuery({ maxWidth: 768 })
   const isTablet: boolean = useMediaQuery({ maxWidth: 1024, minWidth: 768 })
-  const sizes = calculateSizes({ isSmall, isMobile, isTablet })
+  const isLaptop: boolean = useMediaQuery({ maxWidth: 1440, minWidth: 1025 })
+  const sizes = calculateSizes({ isSmall, isMobile, isTablet, isLaptop })
   return (
     <section className="min-h-screen w-full flex flex-col relative" id="home">
       <Texts />

@@ -35,7 +35,7 @@ export interface CustomGLTF extends GLTF {
 }
 
 /** Custom types for calculateSizes arguments */
-export type CalculateSizesArgsType = { isSmall: boolean, isMobile: boolean, isTablet: boolean }
+export type CalculateSizesArgsType = { isSmall: boolean, isMobile: boolean, isTablet: boolean, isLaptop: boolean }
 /** Custom types for calculateSizes return */
 export interface CalculateSizesReturnType {
   deskScale: number

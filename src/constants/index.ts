@@ -49,7 +49,7 @@ export const navLinks: NavLinks = [
 export const myProjects: Project[] = [
   {
     title: 'SQLite Viewer-Browser',
-    desc: 'With over 29,000 downloads, this popular VSCode extension simplifies working with SQLite databases. Effortlessly browse database contents and perform essential operations such as updating, deleting, and inserting data — all within your editor.' +
+    desc: 'With over 30,000 downloads, this popular VSCode extension simplifies working with SQLite databases. Effortlessly browse database contents and perform essential operations such as updating, deleting, and inserting data — all within your editor.' +
       ' Discover it on the official VSCode Marketplace by clicking the "Check Demo" button or find it under the "Extensions" menu in your VSCode side panel.',
     subdesc:
       'I originally created this application as a personal tool to streamline my work with SQLite databases. It is built using HTML, CSS, and JavaScript.',
@@ -82,8 +82,8 @@ export const myProjects: Project[] = [
     mobile: false,
   },
   {
-    title: 'Cenas en Columpios (Dinners on Swings)',
-    desc: 'This web application was built using Typescript, React, NextJS, Sanity, Mercado Pago, Clerk and an AI agent (chatbot) powered by DeepSeek LLM to answer customer questions related to their reservations or the menu offered by Cool Morning.',
+    title: 'Cenas en Columpios',
+    desc: 'This web application was built using Typescript, React, NextJS, Sanity, Mercado Pago, Clerk, Turso DB and an AI agent (chatbot) powered by DeepSeek LLM to answer customer questions related to their reservations or the menu offered by Cool Morning.',
     subdesc:
       'Cool Morning is a small company from Torreón, Mexico that partners with other local businesses to offer unique experiences. The purpose of this application is to provide a platform for customers to book a special dinner in a unique setting and for the business to manage their reservations, customers and menu.',
     href: 'https://www.cenasencolumpios.com.mx/',
@@ -121,7 +121,7 @@ export const myProjects: Project[] = [
   },
   {
     title: 'Admin Dashboard',
-    desc: 'With more than 70 github stars, this Full Stack web application is an Admin Dashboard template that includes a custom Auth API as well as Google Authentication. It uses the GetX library for a complete solution in navigation, http requests and state management and MongoDB for database.',
+    desc: 'With over 80 github stars, this Full Stack web application is an Admin Dashboard template that includes a custom Auth API as well as Google Authentication. It uses the GetX library for a complete solution in navigation, http requests and state management and MongoDB for database.',
     subdesc:
       'The demo data comes from different dummy APIs. The Front End was made with Dart and Flutter. The Back End was made with Typescript, NodeJS and Express.',
     href: 'https://web-admin-dashboard-flutter.vercel.app/#/auth',
@@ -323,12 +323,12 @@ export const myProjects: Project[] = [
 
 export const calculateSizes: CalculateSizesType = (args: CalculateSizesArgsType): CalculateSizesReturnType => {
   return {
-    deskScale: args.isSmall ? 0.05 : args.isMobile ? 0.06 : 0.065,
-    deskPosition: args.isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
-    pythonLogoPosition: args.isSmall ? [2.8, 3.1, 0] : args.isMobile ? [5, -6.5, 0] : args.isTablet ? [7.5, -4.5, 0] : [9, -5.5, 0],
-    reactLogoPosition: args.isSmall ? [0.8, 3.5, 0] : args.isMobile ? [5, 3.3, 0] : args.isTablet ? [7.5, 3.5, 0] : [9, 3, 0],
-    javaLogoPosition: args.isSmall ? [-3, 3, 0] : args.isMobile ? [-5.5, 3, 0] : args.isTablet ? [-8, 3, 0] : [-10, 3, 0],
-    jsLogoPosition: args.isSmall ? [-1.8, 5, -10] : args.isMobile ? [-8, -10, -10] : args.isTablet ? [-12, -7, -10] : [-13, -11, -10]
+    deskScale: args.isSmall ? 0.045 : args.isMobile ? 0.05 : args.isTablet ? 0.051 : args.isLaptop ? 0.051 : 0.065,
+    deskPosition: args.isSmall ? [0.5, -4.0, 0] : args.isMobile ? [0.5, -4.5, 0] : args.isTablet ? [0.25, -5.5, 0] : args.isLaptop ? [0.25, -6.5, 0] : [0.25, -6.5, 0],
+    pythonLogoPosition: args.isSmall ? [2.8, 3.1, 0] : args.isMobile ? [5, -6.5, 0] : args.isTablet ? [6.5, -4.5, 0] : args.isLaptop ? [8, -6.5, 0] : [9, -5.5, 0],
+    reactLogoPosition: args.isSmall ? [0.8, 3.5, 0] : args.isMobile ? [5, 3.3, 0] : args.isTablet ? [6.5, 3.5, 0] : args.isLaptop ? [8, 3, 0] : [9, 3, 0],
+    javaLogoPosition: args.isSmall ? [-3, 3, 0] : args.isMobile ? [-5.5, 3, 0] : args.isTablet ? [-7, 3, 0] : args.isLaptop ? [-9, 3, 0] : [-10, 3, 0],
+    jsLogoPosition: args.isSmall ? [-1.8, 5, -10] : args.isMobile ? [-8, -10, -10] : args.isTablet ? [-10, -8, -10] : args.isLaptop ? [-12, -11, -10] : [-13, -11, -10]
   }
 }
 

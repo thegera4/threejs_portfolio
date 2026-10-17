@@ -16,7 +16,7 @@ describe('Footer', () => {
         render(<Footer />);
         expect(screen.getAllByTestId('footer-link').length).toBeGreaterThan(0);
         expect(screen.getByTestId('cv-link')).toBeInTheDocument();
-        expect(screen.getByText('Mobile-Apps Privacy Policy - privacy')).toBeInTheDocument();
+        expect(screen.getByText('Privacy Policy - privacy')).toBeInTheDocument();
         expect(screen.getByText('Alternative Portfolio - old')).toBeInTheDocument();
     });
 });

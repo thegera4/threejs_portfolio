@@ -15,7 +15,7 @@ test.describe('Footer Section', () => {
         // SocialMedia component is usually in Navbar or Footer? 
         // Navbar.tsx has SocialMedia. Footer.tsx has FooterLink.
         // Let's check FooterLink specifically.
-        // "Mobile-Apps Privacy Policy"
-        await expect(page.getByText('Mobile-Apps Privacy Policy')).toBeVisible();
+        // "Privacy Policy"
+        await expect(page.getByText('Privacy Policy')).toBeVisible();
     });
 });

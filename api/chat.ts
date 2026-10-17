@@ -1,6 +1,6 @@
 import { streamText } from 'ai';
-import { getPriorityTiers, isAIConfigured, getActiveModelInfo } from './ai-config';
-import { GERARDO_PORTFOLIO_SYSTEM_PROMPT } from './ai-context';
+import { getPriorityTiers, isAIConfigured, getActiveModelInfo } from './ai-config.js';
+import { GERARDO_PORTFOLIO_SYSTEM_PROMPT } from './ai-context.js';
 
 export const config = {
   maxDuration: 30,
@@ -52,7 +52,7 @@ function createMockStream(userQuery: string) {
   return new Response(stream, {
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
-      'x-ai-model': modelInfo.modelId,
+      'x-ai-model': getActiveModelInfo().modelId,
       'x-ai-tier': 'fallback-simulation',
       'Cache-Control': 'no-cache',
     },

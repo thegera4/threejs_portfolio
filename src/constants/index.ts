@@ -49,7 +49,7 @@ export const navLinks: NavLinks = [
 export const myProjects: Project[] = [
   {
     title: 'SQLite Viewer-Browser',
-    desc: 'With over 30,000 downloads, this popular VSCode extension simplifies working with SQLite databases. Effortlessly browse database contents and perform essential operations such as updating, deleting, and inserting data — all within your editor.' +
+    desc: 'With over 36,000 downloads, this popular VSCode extension simplifies working with SQLite databases. Effortlessly browse database contents and perform essential operations such as updating, deleting, and inserting data — all within your editor.' +
       ' Discover it on the official VSCode Marketplace by clicking the "Check Demo" button or find it under the "Extensions" menu in your VSCode side panel.',
     subdesc:
       'I originally created this application as a personal tool to streamline my work with SQLite databases. It is built using HTML, CSS, and JavaScript.',

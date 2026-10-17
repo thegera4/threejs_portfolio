@@ -6,7 +6,7 @@ import {
   getPriorityTiers,
   getActiveModelInfo,
   isAIConfigured,
-} from '../../../api/ai-config';
+} from '../../../api/_lib/ai-config';
 
 describe('AI Configuration & 3-Tier Priority Strategy', () => {
   it('should configure sensible defaults for each tier', () => {

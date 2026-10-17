@@ -1,6 +1,6 @@
 import { streamText } from 'ai';
-import { getPriorityTiers, isAIConfigured, getActiveModelInfo } from './ai-config.js';
-import { GERARDO_PORTFOLIO_SYSTEM_PROMPT } from './ai-context.js';
+import { getPriorityTiers, isAIConfigured, getActiveModelInfo } from './_lib/ai-config.js';
+import { GERARDO_PORTFOLIO_SYSTEM_PROMPT } from './_lib/ai-context.js';
 
 export const config = {
   maxDuration: 30,

@@ -1,6 +1,6 @@
 import { generateText } from 'ai';
-import { getPriorityTiers, isAIConfigured } from './ai-config.js';
-import { RECOMMENDER_SYSTEM_PROMPT } from './ai-context.js';
+import { getPriorityTiers, isAIConfigured } from './_lib/ai-config.js';
+import { RECOMMENDER_SYSTEM_PROMPT } from './_lib/ai-context.js';
 
 export const config = {
   maxDuration: 20,

@@ -70,9 +70,61 @@ export const PROJECT_CATALOG = [
   },
 ];
 
-export async function POST(req: Request) {
+async function parseRequestBody(req: any): Promise<any> {
+  if (req && req.body !== undefined) {
+    if (typeof req.body === 'string') {
+      try {
+        return JSON.parse(req.body);
+      } catch {
+        return {};
+      }
+    }
+    return req.body;
+  }
+  if (req && typeof req.json === 'function') {
+    try {
+      return await req.json();
+    } catch {
+      return {};
+    }
+  }
+  if (req && typeof req[Symbol.asyncIterator] === 'function') {
+    try {
+      const chunks: any[] = [];
+      for await (const chunk of req) {
+        chunks.push(chunk);
+      }
+      const raw = Buffer.concat(chunks).toString('utf-8');
+      return raw ? JSON.parse(raw) : {};
+    } catch {
+      return {};
+    }
+  }
+  return {};
+}
+
+function sendJsonResponse(res: any, data: any, status = 200, headers: Record<string, string> = {}) {
+  if (res && typeof res.status === 'function') {
+    res.status(status);
+    Object.entries(headers).forEach(([k, v]) => res.setHeader(k, v));
+    if (typeof res.json === 'function') {
+      return res.json(data);
+    }
+    res.setHeader('Content-Type', 'application/json');
+    return res.end(JSON.stringify(data));
+  }
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      'Content-Type': 'application/json',
+      ...headers,
+    },
+  });
+}
+
+export default async function handler(req: any, res?: any) {
   try {
-    const { interests = {} } = await req.json();
+    const { interests = {} } = await parseRequestBody(req);
 
     // Determine top scoring category
     const entries = Object.entries(interests) as [string, number][];
@@ -84,18 +136,15 @@ export async function POST(req: Request) {
       PROJECT_CATALOG.find((p) => p.tags.includes(topInterest)) || PROJECT_CATALOG[1];
 
     if (!isAIConfigured()) {
-      return new Response(
-        JSON.stringify({
-          projectIndex: fallbackMatch.index,
-          projectId: fallbackMatch.id,
-          projectTitle: fallbackMatch.title,
-          pitch: fallbackMatch.defaultPitch,
-          animation: fallbackMatch.animation,
-          matchReason: `Matched top visitor interest: ${topInterest}`,
-          tier: 'fallback-simulation',
-        }),
-        { status: 200, headers: { 'Content-Type': 'application/json' } }
-      );
+      return sendJsonResponse(res, {
+        projectIndex: fallbackMatch.index,
+        projectId: fallbackMatch.id,
+        projectTitle: fallbackMatch.title,
+        pitch: fallbackMatch.defaultPitch,
+        animation: fallbackMatch.animation,
+        matchReason: `Matched top visitor interest: ${topInterest}`,
+        tier: 'fallback-simulation',
+      });
     }
 
     const tiers = getPriorityTiers();
@@ -111,9 +160,6 @@ Return JSON with { "projectIndex": number, "projectTitle": string, "pitch": stri
 `;
 
     // Multi-tier Fallback Execution:
-    // Priority 1: Direct Google Gemini Free Tier
-    // Priority 2: Vercel AI Gateway Free Model (e.g. nvidia/nemotron-3.5-lightning-free)
-    // Priority 3: Vercel AI Gateway Credits Model (e.g. google/gemini-2.5-flash)
     for (const tier of tiers) {
       try {
         const { text } = await generateText({
@@ -123,59 +169,49 @@ Return JSON with { "projectIndex": number, "projectTitle": string, "pitch": stri
           temperature: 0.5,
         });
 
-        // Clean JSON in case model wrapped it in markdown code block
         const cleanJson = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
         const parsed = JSON.parse(cleanJson);
 
-        return new Response(
-          JSON.stringify({
+        return sendJsonResponse(
+          res,
+          {
             ...parsed,
             tier: tier.id,
             modelId: tier.modelId,
-          }),
+          },
+          200,
           {
-            status: 200,
-            headers: {
-              'Content-Type': 'application/json',
-              'x-ai-tier': tier.id,
-              'x-ai-model': tier.modelId,
-            },
+            'x-ai-tier': tier.id,
+            'x-ai-model': tier.modelId,
           }
         );
       } catch (tierErr: any) {
         console.warn(
           `[Recommender Tier Failover] Tier "${tier.name}" (${tier.modelId}) error: ${tierErr?.message || tierErr}. Falling back to next tier...`
         );
-        // Continue loop to next tier
       }
     }
 
     // Default match if live models fail
-    return new Response(
-      JSON.stringify({
-        projectIndex: fallbackMatch.index,
-        projectId: fallbackMatch.id,
-        projectTitle: fallbackMatch.title,
-        pitch: fallbackMatch.defaultPitch,
-        animation: fallbackMatch.animation,
-        matchReason: `Matched interest in ${topInterest}`,
-        tier: 'fallback-catalog',
-      }),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
-    );
+    return sendJsonResponse(res, {
+      projectIndex: fallbackMatch.index,
+      projectId: fallbackMatch.id,
+      projectTitle: fallbackMatch.title,
+      pitch: fallbackMatch.defaultPitch,
+      animation: fallbackMatch.animation,
+      matchReason: `Matched interest in ${topInterest}`,
+      tier: 'fallback-catalog',
+    });
   } catch (error: any) {
     console.error('Error in /api/recommend handler:', error);
-    return new Response(
-      JSON.stringify({
-        projectIndex: 1,
-        projectTitle: 'Cenas en Columpios',
-        pitch:
-          "Since you're exploring modern full-stack web applications, check out Cenas en Columpios with its integrated AI assistant!",
-        animation: 'victory',
-      }),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
-    );
+    return sendJsonResponse(res, {
+      projectIndex: 1,
+      projectTitle: 'Cenas en Columpios',
+      pitch:
+        "Since you're exploring modern full-stack web applications, check out Cenas en Columpios with its integrated AI assistant!",
+      animation: 'victory',
+    });
   }
 }
 
-export default POST;
+export const POST = handler;

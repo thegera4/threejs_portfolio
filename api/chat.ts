@@ -6,11 +6,44 @@ export const config = {
   maxDuration: 30,
 };
 
+async function parseRequestBody(req: any): Promise<any> {
+  if (req && req.body !== undefined) {
+    if (typeof req.body === 'string') {
+      try {
+        return JSON.parse(req.body);
+      } catch {
+        return {};
+      }
+    }
+    return req.body;
+  }
+  if (req && typeof req.json === 'function') {
+    try {
+      return await req.json();
+    } catch {
+      return {};
+    }
+  }
+  if (req && typeof req[Symbol.asyncIterator] === 'function') {
+    try {
+      const chunks: any[] = [];
+      for await (const chunk of req) {
+        chunks.push(chunk);
+      }
+      const raw = Buffer.concat(chunks).toString('utf-8');
+      return raw ? JSON.parse(raw) : {};
+    } catch {
+      return {};
+    }
+  }
+  return {};
+}
+
 /**
  * Fallback response generator when all live AI tiers are depleted or unconfigured.
  * Ensures the portfolio never crashes or looks broken.
  */
-function createMockStream(userQuery: string) {
+async function sendMockStream(userQuery: string, res?: any) {
   const query = (userQuery || '').toLowerCase();
   let reply = '';
 
@@ -34,16 +67,33 @@ function createMockStream(userQuery: string) {
       "Hello! I'm Gerardo's interactive AI assistant. I can answer questions about his software engineering roles at Ford Motor Company and Financiera Independencia, his 100+ GitHub repositories, his 36k-downloaded VSCode extension, or his technical expertise across React, Flutter, Go, and TypeScript. What would you like to know?";
   }
 
-  const encoder = new TextEncoder();
-
+  const modelId = getActiveModelInfo().modelId;
   const words = reply.split(' ');
 
+  if (res && typeof res.writeHead === 'function') {
+    res.writeHead(200, {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Transfer-Encoding': 'chunked',
+      'x-ai-model': modelId,
+      'x-ai-tier': 'fallback-simulation',
+      'Cache-Control': 'no-cache',
+    });
+    for (let i = 0; i < words.length; i++) {
+      const chunk = (i === 0 ? '' : ' ') + words[i];
+      res.write(chunk);
+      await new Promise((r) => setTimeout(r, 20));
+    }
+    res.end();
+    return;
+  }
+
+  const encoder = new TextEncoder();
   const stream = new ReadableStream({
     async start(controller) {
       for (let i = 0; i < words.length; i++) {
         const chunk = (i === 0 ? '' : ' ') + words[i];
         controller.enqueue(encoder.encode(chunk));
-        await new Promise((r) => setTimeout(r, 25));
+        await new Promise((r) => setTimeout(r, 20));
       }
       controller.close();
     },
@@ -52,32 +102,29 @@ function createMockStream(userQuery: string) {
   return new Response(stream, {
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
-      'x-ai-model': getActiveModelInfo().modelId,
+      'x-ai-model': modelId,
       'x-ai-tier': 'fallback-simulation',
       'Cache-Control': 'no-cache',
     },
   });
 }
 
-export async function POST(req: Request) {
+export default async function handler(req: any, res?: any) {
   try {
-    const body = await req.json();
-    const { messages } = body;
+    const body = await parseRequestBody(req);
+    const { messages = [] } = body;
     const lastMessage = Array.isArray(messages) && messages.length > 0
       ? messages[messages.length - 1]?.content || ''
       : '';
 
     // Check if any AI credentials exist
     if (!isAIConfigured()) {
-      return createMockStream(lastMessage);
+      return sendMockStream(lastMessage, res);
     }
 
     const tiers = getPriorityTiers();
 
     // Multi-tier Fallback Execution:
-    // Priority 1: Direct Google Gemini Free Tier
-    // Priority 2: Vercel AI Gateway Free Model (e.g. nvidia/nemotron-3.5-lightning-free)
-    // Priority 3: Vercel AI Gateway Credits Model (e.g. google/gemini-2.5-flash)
     for (const tier of tiers) {
       try {
         const result = streamText({
@@ -93,6 +140,29 @@ export async function POST(req: Request) {
 
         if (first.done && !first.value) {
           continue;
+        }
+
+        if (res && typeof res.writeHead === 'function') {
+          res.writeHead(200, {
+            'Content-Type': 'text/plain; charset=utf-8',
+            'Transfer-Encoding': 'chunked',
+            'x-ai-tier': tier.id,
+            'x-ai-model': tier.modelId,
+            'Cache-Control': 'no-cache',
+          });
+          if (first.value) {
+            res.write(first.value);
+          }
+          try {
+            for await (const chunk of { [Symbol.asyncIterator]: () => iterator }) {
+              res.write(chunk);
+            }
+          } catch (streamErr) {
+            console.error(`Stream interrupted on tier ${tier.name}:`, streamErr);
+          } finally {
+            res.end();
+          }
+          return;
         }
 
         const encoder = new TextEncoder();
@@ -125,15 +195,23 @@ export async function POST(req: Request) {
         console.warn(
           `[AI Tier Failover] Tier "${tier.name}" (${tier.modelId}) error: ${tierErr?.message || tierErr}. Falling back to next tier...`
         );
-        // Continue loop to next tier
       }
     }
 
     // If all live tiers failed/depleted, serve intelligent fallback stream
     console.warn('[AI Tiers Depleted] All live AI tiers depleted. Serving intelligent fallback stream.');
-    return createMockStream(lastMessage);
+    return sendMockStream(lastMessage, res);
   } catch (error: any) {
     console.error('Error in /api/chat handler:', error);
+    if (res && typeof res.status === 'function') {
+      res.status(500);
+      res.setHeader('Content-Type', 'application/json');
+      return res.end(
+        JSON.stringify({
+          error: error?.message || 'An error occurred while generating AI response.',
+        })
+      );
+    }
     return new Response(
       JSON.stringify({
         error: error?.message || 'An error occurred while generating AI response.',
@@ -143,4 +221,4 @@ export async function POST(req: Request) {
   }
 }
 
-export default POST;
+export const POST = handler;

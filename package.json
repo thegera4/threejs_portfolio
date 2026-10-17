@@ -54,16 +54,5 @@
     "vite": "^6.4.2",
     "vite-plugin-istanbul": "^7.2.1",
     "vitest": "4.0.17"
-  },
-  "pnpm": {
-    "overrides": {
-      "eslint>minimatch": "^9.0.7",
-      "anymatch>picomatch": "^4.0.4",
-      "lodash-es": "^4.17.23",
-      "@typescript-eslint/typescript-estree>minimatch": "^9.0.7",
-      "vite>esbuild": "^0.25.0",
-      "eslint>@eslint/plugin-kit": "^0.3.4",
-      "test-exclude>minimatch": "^9.0.7"
-    }
   }
 }

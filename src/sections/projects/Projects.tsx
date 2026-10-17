@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import {myProjects} from "../../constants"
 import {Project} from "../../types.ts"
 import NavigationControls from "./NavigationControls.tsx"
@@ -13,6 +13,18 @@ const Projects = () => {
 
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0)
   const currentProject: Project = myProjects[currentProjectIndex]
+
+  useEffect(() => {
+    const handleSelect = (e: Event) => {
+      const customEvent = e as CustomEvent<{ index: number }>;
+      if (typeof customEvent.detail?.index === 'number' && customEvent.detail.index >= 0 && customEvent.detail.index < myProjects.length) {
+        setCurrentProjectIndex(customEvent.detail.index);
+      }
+    };
+    window.addEventListener('select-project', handleSelect);
+    return () => window.removeEventListener('select-project', handleSelect);
+  }, [])
+
 
   return (
     <section className="c-space my-20" id="projects">

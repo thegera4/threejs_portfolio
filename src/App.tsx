@@ -6,10 +6,12 @@ import Contact from "./sections/contact/Contact.tsx"
 import Footer from "./sections/footer/Footer.tsx"
 import Experience from "./sections/experience/Experience.tsx"
 //import Clients from "./sections/clients/Clients.tsx"
+import { AiChatWidget } from "./components/AiChat/AiChatWidget.tsx"
+import { SmartRecommender } from "./components/SmartRecommender/SmartRecommender.tsx"
 
 const App = () => {
   return (
-    <main className="max-w-7xl mx-auto">
+    <main className="max-w-7xl mx-auto relative">
       <Navbar />
       <Hero />
       <About />
@@ -18,8 +20,12 @@ const App = () => {
       <Experience />
       <Contact />
       <Footer />
+
+      {/* AI Enhancements */}
+      <SmartRecommender />
+      <AiChatWidget />
     </main>
   )
 }
 
-export default App
+export default App

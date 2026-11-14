@@ -203,7 +203,7 @@ export const myProjects: Project[] = [
         path: '/assets/sqlite.png',
       },
     ],
-    mobile: false,
+    mobile: true,
   },
   {
     title: 'E-Commerce',
@@ -317,7 +317,7 @@ export const myProjects: Project[] = [
     },
     spotlight: '/assets/spotlight2.png',
     tags: [],
-    mobile: true,
+    mobile: false,
   },
 ]
 

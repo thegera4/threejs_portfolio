@@ -305,44 +305,24 @@ export interface FooterLinkProps {
 export type DemoPhoneGLTF = GLTF & {
   nodes: {
     ['phone-screen']: THREE.Mesh
-    Object_4: THREE.Mesh
-    Object_5: THREE.Mesh
-    Object_6: THREE.Mesh
-    Object_7: THREE.Mesh
-    Object_8: THREE.Mesh
-    Object_9: THREE.Mesh
-    Object_10: THREE.Mesh
-    Object_11: THREE.Mesh
-    Object_12: THREE.Mesh
-    Object_13: THREE.Mesh
-    Object_14: THREE.Mesh
-    Object_15: THREE.Mesh
-    Object_16: THREE.Mesh
-    Object_17: THREE.Mesh
-    Object_18: THREE.Mesh
-    Object_19: THREE.Mesh
-    Object_20: THREE.Mesh
-    Object_21: THREE.Mesh
+    ['phone-frame']: THREE.Mesh
+    ['phone-back']: THREE.Mesh
+    ['phone-bezel']: THREE.Mesh
+    ['camera-visor-frame']: THREE.Mesh
+    ['camera-visor-glass']: THREE.Mesh
+    ['camera-lenses']: THREE.Mesh
+    ['camera-flash']: THREE.Mesh
+    ['google-logo']: THREE.Mesh
   }
   materials: {
-    ['Material.003']: THREE.MeshStandardMaterial
-    ['Material.018']: THREE.MeshPhysicalMaterial
-    ['Material.019']: THREE.MeshStandardMaterial
-    ['Material.020']: THREE.MeshStandardMaterial
-    ['Material.033']: THREE.MeshStandardMaterial
-    ['Material.032']: THREE.MeshStandardMaterial
-    ['Material.031']: THREE.MeshStandardMaterial
-    ['Material.030']: THREE.MeshStandardMaterial
-    Flash: THREE.MeshStandardMaterial
-    ['Material.050']: THREE.MeshStandardMaterial
-    ['Google.002']: THREE.MeshStandardMaterial
-    Lens: THREE.MeshStandardMaterial
     Frame: THREE.MeshStandardMaterial
-    ['Material.006']: THREE.MeshStandardMaterial
-    ['Material.011']: THREE.MeshPhysicalMaterial
-    ['Material.001']: THREE.MeshStandardMaterial
-    ['Material.002']: THREE.MeshStandardMaterial
-    ['Material.021']: THREE.MeshPhysicalMaterial
+    BackGlass: THREE.MeshStandardMaterial
+    Bezel: THREE.MeshStandardMaterial
+    Screen: THREE.MeshStandardMaterial
+    VisorGlass: THREE.MeshStandardMaterial
+    Lens: THREE.MeshStandardMaterial
+    Flash: THREE.MeshStandardMaterial
+    Logo: THREE.MeshStandardMaterial
   }
 }
 

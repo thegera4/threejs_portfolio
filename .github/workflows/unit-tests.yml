@@ -13,7 +13,9 @@ on:
 jobs:
     test:
         name: Run Unit Tests
-        runs-on: ubuntu-latest
+        # ubuntu-latest is Ubuntu 26.04. Playwright 1.57 cannot install Chromium there.
+        # Pin the image that the last green master run used.
+        runs-on: ubuntu-24.04
 
         steps:
             - name: Checkout code

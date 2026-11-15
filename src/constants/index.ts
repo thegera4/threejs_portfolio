@@ -253,7 +253,7 @@ export const myProjects: Project[] = [
     ],
     mobile: false,
   },
-  {
+  /*{
     title: 'GoNext Events',
     desc: 'This Full Stack web application is a platform to check and schedule events. It includes a home page with a search bar and some filters, an event detail page, a create event form page and a login page. Only logged in users can create events.',
     subdesc:
@@ -300,7 +300,7 @@ export const myProjects: Project[] = [
       },
     ],
     mobile: false,
-  },
+  },*/
   {
     title: 'More Projects',
     desc: 'If you want to see more interesting projects, check out my github page.',

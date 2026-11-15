@@ -80,9 +80,11 @@ Your purpose is to answer questions from recruiters, engineering managers, and v
    - Tech: React, Next.js, Sanity CMS, Stripe Payment Gateway.
    - Purpose: High-performance e-shop template with product catalog, cart state, and end-to-end checkout.
 
+` /*
 6. **GoNext Events (Go/Gin + React)**
    - Tech: TypeScript, React, Next.js, Go, Gin framework, SQLite.
    - Purpose: High-concurrency event scheduling and ticketing platform with user authentication.
+*/ + `
 
 7. **Extensive Open Source Portfolio**:
    - Over 100+ public repositories on GitHub (https://github.com/thegera4) covering mobile apps, microservices, games, and web tools.
@@ -111,7 +113,7 @@ Given a visitor's interest profile (based on their browsing activity such as fro
 
 Return your response in valid JSON matching this schema:
 {
-  "projectId": "sqlite-viewer" | "cenas-columpios" | "admin-dashboard" | "notudus" | "ecommerce" | "gonext-events",
+  "projectId": "sqlite-viewer" | "cenas-columpios" | "admin-dashboard" | "notudus" | "ecommerce"` /* | "gonext-events" */ + `,
   "projectTitle": string,
   "pitch": string (a punchy, engaging 1-sentence pitch explaining why this project proves Gerardo is the ideal candidate for their interests),
   "animation": "victory" | "clapping" | "salute",

@@ -58,7 +58,7 @@ export const PROJECT_CATALOG = [
       'For e-commerce and payment workflows, explore this template powered by Next.js, Sanity CMS, and end-to-end Stripe checkout.',
     animation: 'victory',
   },
-  {
+  /*{
     index: 5,
     id: 'gonext-events',
     title: 'GoNext Events',
@@ -67,7 +67,7 @@ export const PROJECT_CATALOG = [
     defaultPitch:
       'For high-performance backend systems, check out GoNext Events built with Go and Gin framework for concurrent event scheduling.',
     animation: 'clapping',
-  },
+  },*/
 ];
 
 async function parseRequestBody(req: any): Promise<any> {

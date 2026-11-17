@@ -186,24 +186,23 @@ export interface ProjectSpotlightProps {
 export type DemoPCGLTF = GLTF & {
   nodes: {
     ['monitor-screen']: THREE.Mesh
-    ['Monitor-B-_computer_0_1']: THREE.Mesh
-    ['Monitor-B-_computer_0_2']: THREE.Mesh
-    ['Monitor-B-_computer_0_3']: THREE.Mesh
-    ['Monitor-B-_computer_0_4']: THREE.Mesh
-    ['Monitor-B-_computer_0_5']: THREE.Mesh
-    ['Monitor-B-_computer_0_6']: THREE.Mesh
-    ['Monitor-B-_computer_0_7']: THREE.Mesh
-    ['Monitor-B-_computer_0_8']: THREE.Mesh
+    ['macbook-body']: THREE.Mesh
+    ['macbook-trackpad']: THREE.Mesh
+    ['macbook-keyboard-well']: THREE.Mesh
+    ['macbook-keys']: THREE.Mesh
+    ['macbook-bezel']: THREE.Mesh
+    ['macbook-webcam']: THREE.Mesh
+    ['apple-logo']: THREE.Mesh
   }
   materials: {
-    computer: THREE.MeshStandardMaterial
-    base__0: THREE.MeshStandardMaterial
-    Material_36: THREE.MeshStandardMaterial
-    Material_35: THREE.MeshStandardMaterial
-    Material_34: THREE.MeshStandardMaterial
-    keys: THREE.MeshStandardMaterial
-    keys2: THREE.MeshStandardMaterial
-    Material_37: THREE.MeshStandardMaterial
+    Aluminum: THREE.MeshStandardMaterial
+    Trackpad: THREE.MeshStandardMaterial
+    DarkMetal: THREE.MeshStandardMaterial
+    Keys: THREE.MeshStandardMaterial
+    Bezel: THREE.MeshStandardMaterial
+    Screen: THREE.MeshStandardMaterial
+    Lens: THREE.MeshStandardMaterial
+    Logo: THREE.MeshStandardMaterial
   }
 }
 

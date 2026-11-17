@@ -26,7 +26,7 @@ const ProjectsComputer = ({currentProject}: ProjectsComputerProps) => {
                   <DemoPhone texture={currentProject.texture}/>
                 </group>
                 :
-              <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+              <group scale={11.5} position={[0, -0.15, 0]} rotation={[0.12, -0.2, 0]}>
                 <DemoComputer texture={currentProject.texture}/>
               </group>
             }

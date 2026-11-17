@@ -28,11 +28,12 @@ const ThreeDModels = ({sizes, isMobile} : ThreeDModelProps) => {
         <Suspense fallback={<CanvasLoader/>}>
           <PerspectiveCamera makeDefault position={[0, 0, 20]}/>
           <HeroCamera isMobile={isMobile} >
-            <HackerRoom position={sizes.deskPosition as Vector3} rotation={[0, -Math.PI, 0]} scale={sizes.deskScale}/>
+            <HackerRoom position={sizes.deskPosition as Vector3} rotation={[0.1, 0, 0]} scale={sizes.deskScale}/>
           </HeroCamera>
           {!isMobile &&  <FloatingIcons sizes={sizes}/>}
-          <ambientLight intensity={1}/>
-          <directionalLight position={[10, 10, 10]} intensity={0.5}/>
+          <ambientLight intensity={Math.PI} />
+          <directionalLight position={[10, 10, 10]} intensity={1.5} />
+          <directionalLight position={[-10, 10, 5]} intensity={0.8} />
         </Suspense>
       </Canvas>
     </div>

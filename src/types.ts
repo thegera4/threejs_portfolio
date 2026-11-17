@@ -16,22 +16,31 @@ export interface NavItemsProps {
 /** Custom type for Hero 3D Model*/
 export interface CustomGLTF extends GLTF {
   nodes: {
-    computer_computer_mat_0: Mesh
-    server_server_mat_0: Mesh
-    vhs_vhsPlayer_mat_0: Mesh
-    shelf_stand_mat_0: Mesh
-    keyboard_mat_mat_mat_0: Mesh
-    arm_arm_mat_0: Mesh
-    Tv_tv_mat_0: Mesh
-    table_table_mat_0: Mesh
-    Cables_cables_mat_0: Mesh
-    props_props_mat_0: Mesh
-    screen_screens_0: Mesh
-    screen_glass_glass_0: Mesh
-    Ground_ground_mat_0: Mesh
-    peripherals_key_mat_0: Mesh
+    ['ultrawide-screen']: Mesh
+    ['desk-top']: Mesh
+    ['desk-frame']: Mesh
+    ['desk-mat']: Mesh
+    ['monitor-body']: Mesh
+    ['pc-case']: Mesh
+    ['pc-internals']: Mesh
+    ['pc-glass']: Mesh
+    ['peripherals']: Mesh
+    ['rgb-cyan']: Mesh
+    ['rgb-magenta']: Mesh
   }
-  materials: { [key: string]: Mesh['material'] }
+  materials: {
+    ScreenMat: THREE.MeshStandardMaterial
+    DeskTop: THREE.MeshStandardMaterial
+    DeskMetal: THREE.MeshStandardMaterial
+    MatFabric: THREE.MeshStandardMaterial
+    MonitorChassis: THREE.MeshStandardMaterial
+    CaseMetal: THREE.MeshStandardMaterial
+    HardwareMetal: THREE.MeshStandardMaterial
+    TemperedGlass: THREE.MeshStandardMaterial
+    PeripheralMat: THREE.MeshStandardMaterial
+    RgbCyan: THREE.MeshStandardMaterial
+    RgbMagenta: THREE.MeshStandardMaterial
+  }
 }
 
 /** Custom types for calculateSizes arguments */
